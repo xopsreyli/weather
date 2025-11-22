@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from "react";
+import {useCallback} from "react";
 import {useSearchParams} from "react-router";
 
 const useUrlSyncState = <T>(
@@ -8,26 +8,17 @@ const useUrlSyncState = <T>(
     serialize: (value: T) => string
 ): [T, (value: T) => void] => {
     const [searchParams, setSearchParams] = useSearchParams()
-    const paramsValue: T | null = parse(searchParams.get(name))
-    const [state, setState] = useState<T>(paramsValue || defaultValue)
 
-    useEffect(() => {
-        const value = parse(searchParams.get(name)) || defaultValue
+    const value: T = parse(searchParams.get(name)) || defaultValue
 
-        if (state !== value) {
-            setState(value)
-        }
-    }, [state, searchParams, name, defaultValue, parse])
-
-    const handleSetState = useCallback((value: T) => {
-        setState(value)
+    const setValue = useCallback((newValue: T) => {
         setSearchParams(searchParams => {
-            searchParams.set(name, serialize(value))
+            searchParams.set(name, serialize(newValue))
             return searchParams
         })
     }, [name, setSearchParams, serialize])
 
-    return [state, handleSetState]
+    return [value, setValue]
 }
 
 export default useUrlSyncState
