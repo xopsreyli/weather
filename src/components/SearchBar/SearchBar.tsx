@@ -12,12 +12,12 @@ const SearchBar = ({setValue, placeholder}: SearchBarProps) => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setValue(input)
+        setValue(input.trim())
         setInput('')
     }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInput(e.target.value.trim())
+        setInput(e.target.value)
     }
 
     return (

@@ -50,7 +50,7 @@ const Location = () => {
                         borderBottom: `2px solid ${getTemperatureColor(Math.round(current.temp_c))}`
                     }}
                 >
-                    <img className={styles['condition__icon']} src={'http:' + current.condition.icon} alt={current.condition.text}/>
+                    <img className={styles['condition__icon']} src={'https:' + current.condition.icon} alt={current.condition.text}/>
                     <p className={styles['condition__temperature']}>
                         {Math.round(current.temp_c)}
                         <sup className={styles.celsius}>°C</sup>
