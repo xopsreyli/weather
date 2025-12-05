@@ -9,11 +9,12 @@ import {
 } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
+const basename = import.meta.env.BASE_URL
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <QueryClientProvider client={queryClient}>
-            <BrowserRouter>
+            <BrowserRouter basename={basename}>
                 <App />
             </BrowserRouter>
         </QueryClientProvider>

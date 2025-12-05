@@ -4,6 +4,6 @@ type ApiConfig = {
 }
 
 export const WEATHER_API : ApiConfig = {
-    URL: 'http://api.weatherapi.com/v1',
-    KEY: '185aea183af14cfea2b110459251610',
+    URL: import.meta.env.VITE_WEATHER_API_URL,
+    KEY: import.meta.env.VITE_WEATHER_API_KEY,
 }
