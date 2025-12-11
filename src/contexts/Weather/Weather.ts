@@ -47,10 +47,6 @@ type Current = {
     uv: number;
     gust_mph: number;
     gust_kph: number;
-    short_rad: number;
-    diff_rad: number;
-    dni: number;
-    gti: number;
 }
 
 export type WeatherContextType = {
