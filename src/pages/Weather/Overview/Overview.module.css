@@ -1,0 +1,17 @@
+.box {
+    width: calc((100% - 81px) * 0.7);
+    max-width: calc(100% - 481px);
+    display: flex;
+}
+
+.details-box,
+.forecasts-box {
+    width: 50%;
+}
+
+.forecasts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

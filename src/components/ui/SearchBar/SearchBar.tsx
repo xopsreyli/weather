@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styles from './SearchBar.module.css'
-import Search from "../icons/Search/Search.tsx";
+import Search from "../../icons/Search/Search.tsx";
 
 type SearchBarProps = {
     setValue: (value: string) => void,

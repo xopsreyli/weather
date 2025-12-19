@@ -20,8 +20,8 @@ const WeatherProvider = ({children}: WeatherProviderProps) => {
         queryFn: async () => {
             const response = await fetch(
                 WEATHER_API.URL +
-                "/current.json" +
-                `?key=${WEATHER_API.KEY}&q=${location}`
+                "/forecast.json" +
+                `?key=${WEATHER_API.KEY}&q=${location}&days=3&aqi=no&alerts=no`
             )
 
             if (!response.ok) {
@@ -51,6 +51,7 @@ const WeatherProvider = ({children}: WeatherProviderProps) => {
         setLocation: setLocation,
         locationInfo: data?.location,
         current: data?.current,
+        forecast: data?.forecast,
         isPending: isPending,
         isError: isError,
         error: error,

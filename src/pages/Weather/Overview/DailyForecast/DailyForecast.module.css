@@ -1,0 +1,5 @@
+.box {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: max-content 40px max-content 1fr max-content;
+}

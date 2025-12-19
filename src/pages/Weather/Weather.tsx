@@ -1,10 +1,10 @@
 import styles from './Weather.module.css'
-import Location from '../../components/Location/Location.tsx'
-import Info from "../../components/Info/Info.tsx";
-import Loading from "../../components/Loading/Loading.tsx";
+import Location from './Location/Location.tsx'
+import Loading from "../../components/ui/Loading/Loading.tsx";
 import WeatherProvider from "../../contexts/Weather/WeatherProvider.tsx";
 import {useWeather} from "../../contexts/Weather/Weather.ts";
 import {useNavigate} from "react-router";
+import Overview from "./Overview/Overview.tsx";
 
 const Weather = () => {
     return (
@@ -45,7 +45,8 @@ const WeatherContent = () => {
     return (
         <div className={styles.box}>
             <Location/>
-            <Info/>
+            <hr className={styles.separator}/>
+            <Overview/>
         </div>
     );
 }

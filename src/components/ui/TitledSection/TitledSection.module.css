@@ -1,0 +1,14 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title {
+    color: white;
+}
+
+.separator {
+    height: 1px;
+    background-color: white;
+}
