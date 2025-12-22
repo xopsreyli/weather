@@ -71,3 +71,6 @@ export default defineConfig([
   },
 ])
 ```
+
+## Design ideas:
+https://dribbble.com/shots/19740043-Daily-UI-037-Weather
