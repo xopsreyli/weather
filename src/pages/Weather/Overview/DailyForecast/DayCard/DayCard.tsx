@@ -25,7 +25,7 @@ const DayCard = ({
                      allDaysMax
                  }: DayCardType) => {
     const date: Date = new Date(epoch * 1000)
-    const dayOfWeek = WEEK_DAYS_ABV[date.getDay()]
+    const dayOfWeek: string = WEEK_DAYS_ABV[date.getDay()]
 
     const minColor: string = getTemperatureColor(min)
     const maxColor: string = getTemperatureColor(max)
@@ -35,16 +35,18 @@ const DayCard = ({
 
     let currentLeft: number = 0
     if (currentTemp) {
-        currentLeft = (currentTemp - allDaysMin) / (allDaysMax - allDaysMin) * 100
+        currentLeft = (currentTemp - min) / (max - min) * 100
         currentLeft = Math.min(Math.max(currentLeft, 0), 100)
     }
 
     return (
         <div className={styles.box}>
-            <time>{isToday ? 'Today' : dayOfWeek}</time>
+            <time className={styles.day}>{isToday ? 'Today' : dayOfWeek}</time>
             <img className={styles.icon} src={iconLink} alt="weather icon"/>
             <Temperature
                 temperature={Math.round(min)}
+                tempClass={styles.temperature}
+                badgeClass={styles['temperature--badge']}
             />
             <div className={styles['indicator-box']}>
                 <div
@@ -55,18 +57,20 @@ const DayCard = ({
                         background: `linear-gradient(to right, ${indicatorColors.join(', ')})`,
                     }}
                 >
+                    {currentTemp &&
+                        <div
+                            className={styles['indicator--current']}
+                            style={{
+                                left: `${currentLeft}%`,
+                            }}
+                        ></div>
+                    }
                 </div>
-                {currentTemp &&
-                    <div
-                        className={styles['indicator--current']}
-                        style={{
-                            left: `${currentLeft}%`,
-                        }}
-                    ></div>
-                }
             </div>
             <Temperature
                 temperature={Math.round(max)}
+                tempClass={styles.temperature}
+                badgeClass={styles['temperature--badge']}
             />
         </div>
     );
