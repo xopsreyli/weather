@@ -1,16 +1,17 @@
 .box {
-    width: calc((100% - 81px) * 0.7);
-    max-width: calc(100% - 481px);
+    width: calc(100% - 481px);
     display: flex;
 }
 
-.details-box,
+.details-box {
+    flex: 1;
+}
+
 .forecasts-box {
-    width: 50%;
+    width: 480px;
 }
 
 .forecasts {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;

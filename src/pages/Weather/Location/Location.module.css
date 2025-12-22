@@ -1,6 +1,5 @@
 .box {
-    width: calc((100% - 81px) * 0.3);
-    min-width: 400px;
+    width: 400px;
 }
 
 .content {
