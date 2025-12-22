@@ -10,13 +10,19 @@ type HourForecastCardProps = {
 
 const HourCard = ({dateTime, isNow = false, iconLink, temperature}: HourForecastCardProps) => {
     const hours: string = dateTime.split(' ')[1].split(':')[0]
+    const cardClasses: string = [
+        styles.box,
+        isNow && styles.now
+    ].join(' ')
 
     return (
-        <div className={styles.box}>
-            <time>{isNow ? 'Now' : hours}</time>
-            <img src={iconLink} alt="weather icon"/>
+        <div className={cardClasses}>
+            <time className={styles.hours}>{isNow ? 'Now' : hours}</time>
+            <img className={styles.icon} src={iconLink} alt="weather icon"/>
             <Temperature
                 temperature={Math.round(temperature)}
+                tempClass={styles.temperature}
+                badgeClass={styles['temperature--badge']}
             />
         </div>
     );

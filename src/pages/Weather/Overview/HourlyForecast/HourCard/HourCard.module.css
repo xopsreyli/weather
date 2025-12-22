@@ -3,5 +3,30 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    padding: 4px 12px;
+}
+
+.now {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+.hours {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.icon {
+    width: 40px;
+}
+
+.temperature {
     color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.temperature--badge {
+    font-size: 10px;
+    font-weight: 700;
 }
