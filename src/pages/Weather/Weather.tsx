@@ -5,6 +5,7 @@ import WeatherProvider from "../../contexts/Weather/WeatherProvider.tsx";
 import {useWeather} from "../../contexts/Weather/Weather.ts";
 import {useNavigate} from "react-router";
 import Overview from "./Overview/Overview.tsx";
+import Divider from "../../components/ui/Divider/Divider.tsx";
 
 const Weather = () => {
     return (
@@ -45,7 +46,7 @@ const WeatherContent = () => {
     return (
         <div className={styles.box}>
             <Location/>
-            <hr className={styles.separator}/>
+            <Divider />
             <Overview/>
         </div>
     );

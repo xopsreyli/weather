@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './TitledSection.module.css'
+import Divider from "../Divider/Divider.tsx";
 
 type TitledSectionProps = {
     title: string,
@@ -10,7 +11,7 @@ const TitledSection = ({title, children}: TitledSectionProps) => {
     return (
         <section className={styles.section}>
             <p className={styles.title}>{title}</p>
-            <hr className={styles.separaton} />
+            <Divider isVertical={false} />
             {children}
         </section>
     );

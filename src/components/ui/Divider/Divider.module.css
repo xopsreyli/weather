@@ -1,0 +1,12 @@
+.divider {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.vertical {
+    width: 1px;
+}
+
+.horizontal {
+    height: 1px;
+}
