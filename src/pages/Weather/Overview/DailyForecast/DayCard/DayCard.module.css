@@ -5,6 +5,12 @@
     grid-column: 1 / -1;
     align-items: center;
     gap: 20px;
+    padding: 4px 12px;
+}
+
+.today {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
 }
 
 .day {

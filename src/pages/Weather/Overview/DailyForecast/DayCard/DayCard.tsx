@@ -39,8 +39,13 @@ const DayCard = ({
         currentLeft = Math.min(Math.max(currentLeft, 0), 100)
     }
 
+    const cardClasses: string = [
+        styles.box,
+        isToday && styles.today,
+    ].join(' ')
+
     return (
-        <div className={styles.box}>
+        <div className={cardClasses}>
             <time className={styles.day}>{isToday ? 'Today' : dayOfWeek}</time>
             <img className={styles.icon} src={iconLink} alt="weather icon"/>
             <Temperature

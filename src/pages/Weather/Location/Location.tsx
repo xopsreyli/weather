@@ -22,7 +22,11 @@ const Location = () => {
                     />
                     <div className={styles.location}>
                         <p className={styles['location__name']}>{locationInfo.name}</p>
-                        <p className={styles['location__region']}>{locationInfo.region + ', ' + locationInfo.country}</p>
+                        <p className={styles['location__region']}>{
+                            locationInfo.region ?
+                                `${locationInfo.region}, ${locationInfo.country}` :
+                                locationInfo.country
+                        }</p>
                     </div>
                     <div className={styles.condition}>
                         <div
