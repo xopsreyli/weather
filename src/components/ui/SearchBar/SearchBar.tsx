@@ -23,7 +23,7 @@ const SearchBar = ({setValue, placeholder}: SearchBarProps) => {
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
             <label htmlFor={'search'}>
-                <Search customClasses={[styles.icon]} />
+                <Search customClass={styles.icon}/>
             </label>
             <input
                 className={styles.search}

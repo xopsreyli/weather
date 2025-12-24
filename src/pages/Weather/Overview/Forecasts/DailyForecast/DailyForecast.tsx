@@ -1,5 +1,5 @@
 import styles from './DailyForecast.module.css'
-import {useWeather} from "../../../../contexts/Weather/Weather.ts";
+import {useWeather} from "../../../../../contexts/Weather/Weather.ts";
 import DayCard from "./DayCard/DayCard.tsx";
 
 const DailyForecast = () => {

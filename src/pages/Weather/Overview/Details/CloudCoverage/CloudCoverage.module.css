@@ -1,0 +1,40 @@
+.title {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    height: 120px;
+}
+
+.icon path {
+    fill: lightskyblue;
+}
+
+.percentage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 700;
+}
+
+.percentage--back {
+    color: #1c1c1c;
+    z-index: -1;
+}
+
+.percentage--front {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    z-index: 1;
+}

@@ -1,7 +1,7 @@
 import styles from './HourlyForecast.module.css'
-import ScrollBox from "../../../../components/ui/ScrollBox/ScrollBox.tsx";
-import {axes} from "../../../../enums/axes/axes.ts";
-import {useWeather} from "../../../../contexts/Weather/Weather.ts";
+import ScrollBox from "../../../../../components/ui/ScrollBox/ScrollBox.tsx";
+import {axes} from "../../../../../enums/axes/axes.ts";
+import {useWeather} from "../../../../../contexts/Weather/Weather.ts";
 import HourCard from "./HourCard/HourCard.tsx";
 
 const HourlyForecast = () => {

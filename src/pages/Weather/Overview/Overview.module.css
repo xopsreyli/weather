@@ -1,6 +1,7 @@
 .box {
     width: calc(100% - 481px);
     display: flex;
+    gap: 40px;
 }
 
 .details-box {
@@ -9,6 +10,16 @@
 
 .forecasts-box {
     width: 480px;
+}
+
+details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cloud-coverage-box {
+    width: 50%;
 }
 
 .forecasts {

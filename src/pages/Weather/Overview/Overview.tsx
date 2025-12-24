@@ -1,11 +1,12 @@
 import styles from './Overview.module.css'
 import ScrollBox from "../../../components/ui/ScrollBox/ScrollBox.tsx";
-import HourlyForecast from "./HourlyForecast/HourlyForecast.tsx";
+import HourlyForecast from "./Forecasts/HourlyForecast/HourlyForecast.tsx";
 import DetailBackground from "../../../components/ui/DetailBackground/DetailBackground.tsx";
 import TitledSection from "../../../components/ui/TitledSection/TitledSection.tsx";
 import {axes} from "../../../enums/axes/axes.ts";
 import {useWeather} from "../../../contexts/Weather/Weather.ts";
-import DailyForecast from "./DailyForecast/DailyForecast.tsx";
+import DailyForecast from "./Forecasts/DailyForecast/DailyForecast.tsx";
+import CloudCoverage from "./Details/CloudCoverage/CloudCoverage.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -14,7 +15,13 @@ const Overview = () => {
         <div className={styles.box}>
             <div className={styles['details-box']}>
                 <ScrollBox axis={axes.Y}>
-                    <span>test</span>
+                    <div className={styles.details}>
+                        <div className={styles['cloud-coverage-box']}>
+                            <DetailBackground>
+                                <CloudCoverage />
+                            </DetailBackground>
+                        </div>
+                    </div>
                 </ScrollBox>
             </div>
             <div className={styles['forecasts-box']}>

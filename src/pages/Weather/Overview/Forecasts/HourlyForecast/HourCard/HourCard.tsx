@@ -1,5 +1,5 @@
 import styles from './HourCard.module.css'
-import Temperature from "../../../../../components/ui/Temperature/Temperature.tsx";
+import Temperature from "../../../../../../components/ui/Temperature/Temperature.tsx";
 
 type HourForecastCardProps = {
     dateTime: string;

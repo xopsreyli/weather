@@ -1,7 +1,7 @@
 import styles from './DayCard.module.css'
-import {colors, getTemperatureColor} from "../../../../../utils/temperatureColors/tempteratureColors.ts";
-import Temperature from "../../../../../components/ui/Temperature/Temperature.tsx";
-import {WEEK_DAYS_ABV} from "../../../../../enums/weekDays/weekDays.ts";
+import {colors, getTemperatureColor} from "../../../../../../utils/temperatureColors/tempteratureColors.ts";
+import Temperature from "../../../../../../components/ui/Temperature/Temperature.tsx";
+import {WEEK_DAYS_ABV} from "../../../../../../enums/weekDays/weekDays.ts";
 
 type DayCardType = {
     epoch: number,
