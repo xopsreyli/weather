@@ -1,13 +1,17 @@
 import styles from './CloudCoverage.module.css'
 import {useWeather} from "../../../../../contexts/Weather/Weather.ts";
 import Cloud from "../../../../../components/icons/Cloud/Cloud.tsx";
+import CardTitle from "../../../../../components/ui/CardTitle/CardTitle.tsx";
 
 const CloudCoverage = () => {
     const {current} = useWeather()
 
     return (
         <>
-            <h3 className={styles.title}>Cloud coverage(%)</h3>
+            <CardTitle
+                icon={<Cloud customClass={styles['title__icon']} />}
+                title={'Cloud coverage(%)'}
+            />
             <div className={styles.box}>
                 <Cloud customClass={styles.icon}/>
                 <span

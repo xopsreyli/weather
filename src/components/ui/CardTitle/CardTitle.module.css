@@ -1,0 +1,12 @@
+.title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text {
+    text-transform: capitalize;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}

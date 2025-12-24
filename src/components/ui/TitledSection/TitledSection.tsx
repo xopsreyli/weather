@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './TitledSection.module.css'
 import Divider from "../Divider/Divider.tsx";
+import CardTitle from "../CardTitle/CardTitle.tsx";
 
 type TitledSectionProps = {
     title: string,
@@ -10,7 +11,7 @@ type TitledSectionProps = {
 const TitledSection = ({title, children}: TitledSectionProps) => {
     return (
         <section className={styles.section}>
-            <p className={styles.title}>{title}</p>
+            <CardTitle title={title}/>
             <Divider isVertical={false} />
             {children}
         </section>

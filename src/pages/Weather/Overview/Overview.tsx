@@ -7,6 +7,7 @@ import {axes} from "../../../enums/axes/axes.ts";
 import {useWeather} from "../../../contexts/Weather/Weather.ts";
 import DailyForecast from "./Forecasts/DailyForecast/DailyForecast.tsx";
 import CloudCoverage from "./Details/CloudCoverage/CloudCoverage.tsx";
+import Visibility from "./Details/Visibility/Visibility.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -19,6 +20,11 @@ const Overview = () => {
                         <div className={styles['cloud-coverage-box']}>
                             <DetailBackground>
                                 <CloudCoverage />
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['visibility-box']}>
+                            <DetailBackground>
+                                <Visibility />
                             </DetailBackground>
                         </div>
                     </div>

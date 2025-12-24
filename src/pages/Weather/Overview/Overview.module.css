@@ -12,14 +12,16 @@
     width: 480px;
 }
 
-details {
+.details {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.cloud-coverage-box {
-    width: 50%;
+.cloud-coverage-box,
+.visibility-box {
+    width: calc((100% - 20px) / 2);
 }
 
 .forecasts {
