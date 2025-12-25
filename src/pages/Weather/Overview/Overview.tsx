@@ -12,6 +12,8 @@ import Cloud from "../../../components/icons/Cloud/Cloud.tsx";
 import Eye from "../../../components/icons/Eye/Eye.tsx";
 import Precipitation from "./Details/Precipitation/Precipitation.tsx";
 import DropWater from "../../../components/icons/DropWater/DropWater.tsx";
+import Humidity from "./Details/Humidity/Humidity.tsx";
+import HumidityIcon from "../../../components/icons/Humidity/Humidity.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -48,6 +50,16 @@ const Overview = () => {
                                     title={'precipitation'}
                                 >
                                     <Precipitation />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['humidity-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<HumidityIcon customClass={styles['humidity-title-icon']} />}
+                                    title={'humidity'}
+                                >
+                                    <Humidity />
                                 </TitledSection>
                             </DetailBackground>
                         </div>

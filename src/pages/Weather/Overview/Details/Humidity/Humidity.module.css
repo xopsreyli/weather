@@ -1,0 +1,9 @@
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.humidity {
+    color: white;
+    font-size: 32px;
+}

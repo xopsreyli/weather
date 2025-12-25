@@ -3,7 +3,6 @@ import {useWeather} from "../../../../../contexts/Weather/Weather.ts";
 
 const Precipitation = () => {
     const {forecast} = useWeather()
-    console.log(forecast)
 
     return (
         <div className={styles.box}>
