@@ -8,6 +8,8 @@ import {useWeather} from "../../../contexts/Weather/Weather.ts";
 import DailyForecast from "./Forecasts/DailyForecast/DailyForecast.tsx";
 import CloudCoverage from "./Details/CloudCoverage/CloudCoverage.tsx";
 import Visibility from "./Details/Visibility/Visibility.tsx";
+import Cloud from "../../../components/icons/Cloud/Cloud.tsx";
+import Eye from "../../../components/icons/Eye/Eye.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -19,12 +21,22 @@ const Overview = () => {
                     <div className={styles.details}>
                         <div className={styles['cloud-coverage-box']}>
                             <DetailBackground>
-                                <CloudCoverage />
+                                <TitledSection
+                                    titleIcon={<Cloud customClass={styles['cloud-title-icon']} />}
+                                    title={'Cloud coverage(%)'}
+                                >
+                                    <CloudCoverage />
+                                </TitledSection>
                             </DetailBackground>
                         </div>
                         <div className={styles['visibility-box']}>
                             <DetailBackground>
-                                <Visibility />
+                                <TitledSection
+                                    titleIcon={<Eye customClass={styles['visibility-title-icon']} />}
+                                    title={'visibility'}
+                                >
+                                    <Visibility />
+                                </TitledSection>
                             </DetailBackground>
                         </div>
                     </div>
@@ -34,12 +46,18 @@ const Overview = () => {
                 <ScrollBox axis={axes.Y}>
                     <div className={styles.forecasts}>
                         <DetailBackground>
-                            <TitledSection title={'24-Hours Forecast'}>
+                            <TitledSection
+                                title={'24-Hours Forecast'}
+                                showDivider
+                            >
                                 <HourlyForecast />
                             </TitledSection>
                         </DetailBackground>
                         <DetailBackground>
-                            <TitledSection title={`${forecast.forecastday.length}-Day Forecast`}>
+                            <TitledSection
+                                title={`${forecast.forecastday.length}-Day Forecast`}
+                                showDivider
+                            >
                                 <DailyForecast />
                             </TitledSection>
                         </DetailBackground>

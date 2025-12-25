@@ -1,16 +1,7 @@
-.title__icon {
-    height: 18px;
-}
-
-.title__icon path {
-    fill: white;
-}
-
 .box {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
 }
 
 .icon {

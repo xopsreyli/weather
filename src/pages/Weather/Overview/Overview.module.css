@@ -24,6 +24,16 @@
     width: calc((100% - 20px) / 2);
 }
 
+.cloud-title-icon,
+.visibility-title-icon{
+    height: 18px;
+}
+
+.cloud-title-icon path,
+.visibility-title-icon path {
+    fill: white;
+}
+
 .forecasts {
     display: flex;
     flex-direction: column;

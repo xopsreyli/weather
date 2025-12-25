@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './CardTitle.module.css';
+import styles from './Title.module.css';
 
 type TitleProps = {
     icon?: React.ReactNode,
     title: string,
 }
 
-const CardTitle = ({icon, title}: TitleProps) => {
+const Title = ({icon, title}: TitleProps) => {
     return (
         <h3 className={styles.title}>
             {icon}
@@ -17,4 +17,4 @@ const CardTitle = ({icon, title}: TitleProps) => {
     );
 };
 
-export default CardTitle;
+export default Title;
