@@ -14,6 +14,8 @@ import Precipitation from "./Details/Precipitation/Precipitation.tsx";
 import DropWater from "../../../components/icons/DropWater/DropWater.tsx";
 import Humidity from "./Details/Humidity/Humidity.tsx";
 import HumidityIcon from "../../../components/icons/Humidity/Humidity.tsx";
+import FeelsLike from "./Details/FeelsLike/FeelsLike.tsx";
+import Thermometer from "../../../components/icons/Thermometer/Thermometer.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -60,6 +62,16 @@ const Overview = () => {
                                     title={'humidity'}
                                 >
                                     <Humidity />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['feelslike-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<Thermometer customClass={styles['feelslike-title-icon']} />}
+                                    title={'feels like'}
+                                >
+                                    <FeelsLike />
                                 </TitledSection>
                             </DetailBackground>
                         </div>

@@ -40,7 +40,6 @@ const Location = () => {
                             <Temperature
                                 temperature={Math.round(current.temp_c)}
                                 tempClass={styles['condition__temperature']}
-                                badgeClass={styles.celsius}
                             />
                         </div>
                         <p className={styles.condition__text}>{current.condition.text}</p>

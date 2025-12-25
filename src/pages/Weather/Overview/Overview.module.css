@@ -22,22 +22,28 @@
 .cloud-coverage-box,
 .visibility-box,
 .precipitation-box,
-.humidity-box {
+.humidity-box,
+.feelslike-box {
     width: calc((100% - 20px) / 2);
 }
 
 .cloud-title-icon,
 .visibility-title-icon,
 .precipitation-title-icon,
-.humidity-title-icon {
+.humidity-title-icon,
+.feelslike-title-icon {
     height: 18px;
 }
 
 .cloud-title-icon path,
 .visibility-title-icon path,
 .precipitation-title-icon path,
-.humidity-title-icon path{
+.humidity-title-icon path {
     fill: white;
+}
+
+.feelslike-title-icon path {
+    stroke: white;
 }
 
 .forecasts {

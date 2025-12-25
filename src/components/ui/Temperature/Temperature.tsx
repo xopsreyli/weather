@@ -1,15 +1,16 @@
+import styles from './Temperature.module.css'
+
 type TemperatureType = {
     temperature: number,
     tempClass?: string,
-    badgeClass?: string,
 }
 
-const Temperature = ({temperature, tempClass, badgeClass}: TemperatureType) => {
+const Temperature = ({temperature, tempClass}: TemperatureType) => {
     return (
-        <div className={tempClass}>
+        <span className={tempClass}>
             {temperature}
-            <sup className={badgeClass}>°C</sup>
-        </div>
+            <sup className={styles.unit}>°C</sup>
+        </span>
     );
 };
 

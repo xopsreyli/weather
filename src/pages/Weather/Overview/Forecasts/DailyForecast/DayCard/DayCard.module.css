@@ -27,11 +27,6 @@
     font-weight: 700;
 }
 
-.temperature--badge {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 10px;
-}
-
 .indicator-box {
     position: relative;
     width: 100%;

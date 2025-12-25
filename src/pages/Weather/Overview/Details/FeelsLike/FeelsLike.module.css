@@ -1,0 +1,21 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feelslike {
+    color: white;
+    font-size: 32px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.actual,
+.windchill {
+    color: rgba(255, 255, 255, 0.8);
+}

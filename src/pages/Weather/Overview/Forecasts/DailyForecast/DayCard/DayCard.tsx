@@ -51,7 +51,6 @@ const DayCard = ({
             <Temperature
                 temperature={Math.round(min)}
                 tempClass={styles.temperature}
-                badgeClass={styles['temperature--badge']}
             />
             <div className={styles['indicator-box']}>
                 <div
@@ -75,7 +74,6 @@ const DayCard = ({
             <Temperature
                 temperature={Math.round(max)}
                 tempClass={styles.temperature}
-                badgeClass={styles['temperature--badge']}
             />
         </div>
     );

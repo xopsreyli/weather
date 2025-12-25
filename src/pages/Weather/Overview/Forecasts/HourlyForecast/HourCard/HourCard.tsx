@@ -22,7 +22,6 @@ const HourCard = ({dateTime, isNow = false, iconLink, temperature}: HourForecast
             <Temperature
                 temperature={Math.round(temperature)}
                 tempClass={styles.temperature}
-                badgeClass={styles['temperature--badge']}
             />
         </div>
     );
