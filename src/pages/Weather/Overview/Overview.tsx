@@ -10,6 +10,8 @@ import CloudCoverage from "./Details/CloudCoverage/CloudCoverage.tsx";
 import Visibility from "./Details/Visibility/Visibility.tsx";
 import Cloud from "../../../components/icons/Cloud/Cloud.tsx";
 import Eye from "../../../components/icons/Eye/Eye.tsx";
+import Precipitation from "./Details/Precipitation/Precipitation.tsx";
+import DropWater from "../../../components/icons/DropWater/DropWater.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -36,6 +38,16 @@ const Overview = () => {
                                     title={'visibility'}
                                 >
                                     <Visibility />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['precipitation-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<DropWater customClass={styles['precipitation-title-icon']} />}
+                                    title={'precipitation'}
+                                >
+                                    <Precipitation />
                                 </TitledSection>
                             </DetailBackground>
                         </div>

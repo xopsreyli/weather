@@ -20,17 +20,20 @@
 }
 
 .cloud-coverage-box,
-.visibility-box {
+.visibility-box,
+.precipitation-box {
     width: calc((100% - 20px) / 2);
 }
 
 .cloud-title-icon,
-.visibility-title-icon{
+.visibility-title-icon,
+.precipitation-title-icon {
     height: 18px;
 }
 
 .cloud-title-icon path,
-.visibility-title-icon path {
+.visibility-title-icon path,
+.precipitation-title-icon path {
     fill: white;
 }
 
