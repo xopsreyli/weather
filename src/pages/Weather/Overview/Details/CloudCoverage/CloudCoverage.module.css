@@ -6,6 +6,7 @@
 
 .icon {
     height: 120px;
+    opacity: 0.75;
 }
 
 .icon path {

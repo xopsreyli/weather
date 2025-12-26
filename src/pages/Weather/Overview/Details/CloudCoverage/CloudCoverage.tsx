@@ -1,13 +1,13 @@
 import styles from './CloudCoverage.module.css'
 import {useWeather} from "../../../../../contexts/Weather/Weather.ts";
-import Cloud from "../../../../../components/icons/Cloud/Cloud.tsx";
+import Clouds from "../../../../../components/icons/Clouds/Clouds.tsx";
 
 const CloudCoverage = () => {
     const {current} = useWeather()
 
     return (
         <div className={styles.box}>
-            <Cloud customClass={styles.icon}/>
+            <Clouds customClass={styles.icon}/>
             <span
                 className={[
                     styles.percentage,
