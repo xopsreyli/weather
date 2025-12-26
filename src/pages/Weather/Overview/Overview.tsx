@@ -16,6 +16,8 @@ import Humidity from "./Details/Humidity/Humidity.tsx";
 import HumidityIcon from "../../../components/icons/Humidity/Humidity.tsx";
 import FeelsLike from "./Details/FeelsLike/FeelsLike.tsx";
 import Thermometer from "../../../components/icons/Thermometer/Thermometer.tsx";
+import Sun from "../../../components/icons/Sun/Sun.tsx";
+import UVIndex from "./Details/UVIndex/UVIndex.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -72,6 +74,16 @@ const Overview = () => {
                                     title={'feels like'}
                                 >
                                     <FeelsLike />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['uv-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<Sun customClass={styles['uv-title-icon']} />}
+                                    title={'UV-Index'}
+                                >
+                                    <UVIndex />
                                 </TitledSection>
                             </DetailBackground>
                         </div>

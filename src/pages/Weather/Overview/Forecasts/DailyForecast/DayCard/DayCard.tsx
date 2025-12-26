@@ -2,6 +2,7 @@ import styles from './DayCard.module.css'
 import {colors, getTemperatureColor} from "../../../../../../utils/temperatureColors/tempteratureColors.ts";
 import Temperature from "../../../../../../components/ui/Temperature/Temperature.tsx";
 import {WEEK_DAYS_ABV} from "../../../../../../enums/weekDays/weekDays.ts";
+import Indicator from "../../../../../../components/ui/Indicator/Indicator.tsx";
 
 type DayCardType = {
     epoch: number,
@@ -33,12 +34,6 @@ const DayCard = ({
     const indicatorWidth: number = (max - min) / (allDaysMax - allDaysMin) * 100
     const indicatorLeft: number = (min - allDaysMin) / (allDaysMax - allDaysMin) * 100
 
-    let currentLeft: number = 0
-    if (currentTemp) {
-        currentLeft = (currentTemp - min) / (max - min) * 100
-        currentLeft = Math.min(Math.max(currentLeft, 0), 100)
-    }
-
     const cardClasses: string = [
         styles.box,
         isToday && styles.today,
@@ -52,23 +47,22 @@ const DayCard = ({
                 temperature={Math.round(min)}
                 tempClass={styles.temperature}
             />
-            <div className={styles['indicator-box']}>
+            <div className={styles['indicator-track']}>
                 <div
-                    className={styles.indicator}
+                    className={styles['indicator-box']}
                     style={{
                         width: `${indicatorWidth}%`,
                         left: `${indicatorLeft}%`,
-                        background: `linear-gradient(to right, ${indicatorColors.join(', ')})`,
                     }}
                 >
-                    {currentTemp &&
-                        <div
-                            className={styles['indicator--current']}
-                            style={{
-                                left: `${currentLeft}%`,
-                            }}
-                        ></div>
-                    }
+                    <Indicator
+                        colors={indicatorColors}
+                        {...(isToday && {
+                            min:min,
+                            max:max,
+                            current:currentTemp
+                        })}
+                    />
                 </div>
             </div>
             <Temperature

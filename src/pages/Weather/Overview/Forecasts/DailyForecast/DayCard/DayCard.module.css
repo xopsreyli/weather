@@ -27,7 +27,7 @@
     font-weight: 700;
 }
 
-.indicator-box {
+.indicator-track {
     position: relative;
     width: 100%;
     height: 4px;
@@ -35,18 +35,6 @@
     background: #000;
 }
 
-.indicator {
+.indicator-box {
     position: absolute;
-    height: 4px;
-    border-radius: 2px;
-}
-
-.indicator--current {
-    position: absolute;
-    top: 50%;
-    width: 8px;
-    aspect-ratio: 1;
-    background: white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
 }

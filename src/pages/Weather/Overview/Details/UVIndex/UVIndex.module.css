@@ -1,0 +1,25 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.uv-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.uv {
+    color: white;
+    font-size: 32px;
+}
+
+.level {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.suggestion {
+    color: rgba(255, 255, 255, 0.8);
+}
