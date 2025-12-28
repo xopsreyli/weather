@@ -1,0 +1,4 @@
+.box {
+    width: min(200px, 100%);
+    margin: auto;
+}

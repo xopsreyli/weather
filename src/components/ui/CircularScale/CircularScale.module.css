@@ -1,0 +1,73 @@
+.box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #161616;
+}
+
+.tick,
+.indicator-box {
+    position: absolute;
+    left: 50%;
+    height: 10%;
+    transform: translateX(-50%);
+    transform-origin: center 500%;
+}
+
+.tick {
+    width: 2px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.indicator-box {
+    width: 4px;
+}
+
+.indicator {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px white;
+}
+
+.value,
+.measurement {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.value {
+    color: white;
+    font-size: 32px;
+    transform: translate(-50%, -50%);
+}
+
+.measurement {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    transform: translate(-50%, 20px);
+}
+
+.arrow {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+}
+
+.arrow path {
+    stroke: rgba(255, 255, 255, 0.8);
+}
+
+.arrow--up {
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.arrow--down {
+    left: 30%;
+    transform: translateX(-50%) rotate(180deg);
+}

@@ -24,7 +24,8 @@
 .precipitation-box,
 .humidity-box,
 .feelslike-box,
-.uv-box {
+.uv-box,
+.pressure-box {
     width: calc((100% - 20px) / 2);
 }
 
@@ -33,7 +34,8 @@
 .precipitation-title-icon,
 .humidity-title-icon,
 .feelslike-title-icon,
-.uv-title-icon {
+.uv-title-icon,
+.pressure-title-icon {
     height: 18px;
 }
 
@@ -41,7 +43,8 @@
 .visibility-title-icon path,
 .precipitation-title-icon path,
 .humidity-title-icon path,
-.uv-title-icon path {
+.uv-title-icon path,
+.pressure-title-icon path {
     fill: white;
 }
 
