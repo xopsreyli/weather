@@ -47,7 +47,7 @@ const Location = () => {
                         <p className={styles.condition__text}>{current.condition.text}</p>
                         <div className={styles['condition__min-max']}>
                             <div className={styles['min-max']}>
-                                <Arrow customClass={[styles.arrow, styles['arrow--down']].join(' ')} />
+                                <Arrow customClass={[styles['min-max__arrow'], styles['min-max__arrow--down']].join(' ')} />
                                 <Temperature
                                     tempClass={styles['min-max__temperature']}
                                     temperature={Math.round(forecast.forecastday[0].day.mintemp_c)}
@@ -59,7 +59,7 @@ const Location = () => {
                                     tempClass={styles['min-max__temperature']}
                                     temperature={Math.round(forecast.forecastday[0].day.maxtemp_c)}
                                 />
-                                <Arrow customClass={styles.arrow} />
+                                <Arrow customClass={styles['min-max__arrow']} />
                             </div>
                         </div>
                     </div>
