@@ -20,9 +20,6 @@
 }
 
 .cloud-coverage-box,
-.visibility-box,
-.precipitation-box,
-.humidity-box,
 .feelslike-box,
 .uv-box,
 .pressure-box {
@@ -31,6 +28,12 @@
 
 .wind-box {
     width: 100%;
+}
+
+.visibility-box,
+.precipitation-box,
+.humidity-box {
+    width: calc((100% - 40px) / 3);
 }
 
 .cloud-title-icon,

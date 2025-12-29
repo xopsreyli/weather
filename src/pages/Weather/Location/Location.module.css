@@ -55,6 +55,37 @@
     font-size: 18px;
 }
 
+.condition__min-max {
+    display: flex;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 4px 16px;
+}
+
+.min-max {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.min-max__temperature {
+    color: white;
+    font-size: 20px;
+}
+
+.arrow {
+    width: 28px;
+}
+
+.arrow path {
+    stroke: rgba(255, 255, 255, 0.8);
+}
+
+.arrow--down {
+    transform: rotate(180deg);
+}
+
 .reset-box {
     flex: 1;
     display: flex;

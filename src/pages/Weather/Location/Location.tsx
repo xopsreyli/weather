@@ -6,9 +6,11 @@ import ScrollBox from "../../../components/ui/ScrollBox/ScrollBox.tsx";
 import {axes} from "../../../enums/axes/axes.ts";
 import {getTemperatureColor} from "../../../utils/temperatureColors/tempteratureColors.ts";
 import Temperature from "../../../components/ui/Temperature/Temperature.tsx";
+import Arrow from "../../../components/icons/Arrow/Arrow.tsx";
+import Divider from "../../../components/ui/Divider/Divider.tsx";
 
 const Location = () => {
-    const {setLocation, locationInfo, current} = useWeather();
+    const {setLocation, locationInfo, current, forecast} = useWeather();
     const [searchParams] = useSearchParams()
     const userLocation = localStorage.getItem("userLocation") || ''
 
@@ -43,6 +45,23 @@ const Location = () => {
                             />
                         </div>
                         <p className={styles.condition__text}>{current.condition.text}</p>
+                        <div className={styles['condition__min-max']}>
+                            <div className={styles['min-max']}>
+                                <Arrow customClass={[styles.arrow, styles['arrow--down']].join(' ')} />
+                                <Temperature
+                                    tempClass={styles['min-max__temperature']}
+                                    temperature={Math.round(forecast.forecastday[0].day.mintemp_c)}
+                                />
+                            </div>
+                            <Divider />
+                            <div className={styles['min-max']}>
+                                <Temperature
+                                    tempClass={styles['min-max__temperature']}
+                                    temperature={Math.round(forecast.forecastday[0].day.maxtemp_c)}
+                                />
+                                <Arrow customClass={styles.arrow} />
+                            </div>
+                        </div>
                     </div>
                     {searchParams.get('location') !== userLocation && (
                         <div className={styles['reset-box']}>

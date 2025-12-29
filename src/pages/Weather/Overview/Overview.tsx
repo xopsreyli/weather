@@ -31,6 +31,36 @@ const Overview = () => {
             <div className={styles['details-box']}>
                 <ScrollBox axis={axes.Y}>
                     <div className={styles.details}>
+                        <div className={styles['feelslike-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<Thermometer customClass={styles['feelslike-title-icon']} />}
+                                    title={'feels like'}
+                                >
+                                    <FeelsLike />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['uv-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<Sun customClass={styles['uv-title-icon']} />}
+                                    title={'UV-Index'}
+                                >
+                                    <UVIndex />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['wind-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<WindIcon customClass={styles['wind-title-icon']} />}
+                                    title={'wind'}
+                                >
+                                    <Wind />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
                         <div className={styles['cloud-coverage-box']}>
                             <DetailBackground>
                                 <TitledSection
@@ -38,6 +68,16 @@ const Overview = () => {
                                     title={'Cloud coverage(%)'}
                                 >
                                     <CloudCoverage />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['pressure-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<PressureIcon customClass={styles['pressure-title-icon']} />}
+                                    title={'pressure'}
+                                >
+                                    <Pressure />
                                 </TitledSection>
                             </DetailBackground>
                         </div>
@@ -68,46 +108,6 @@ const Overview = () => {
                                     title={'humidity'}
                                 >
                                     <Humidity />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['feelslike-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<Thermometer customClass={styles['feelslike-title-icon']} />}
-                                    title={'feels like'}
-                                >
-                                    <FeelsLike />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['uv-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<Sun customClass={styles['uv-title-icon']} />}
-                                    title={'UV-Index'}
-                                >
-                                    <UVIndex />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['pressure-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<PressureIcon customClass={styles['pressure-title-icon']} />}
-                                    title={'pressure'}
-                                >
-                                    <Pressure />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['wind-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<WindIcon customClass={styles['wind-title-icon']} />}
-                                    title={'wind'}
-                                >
-                                    <Wind />
                                 </TitledSection>
                             </DetailBackground>
                         </div>
