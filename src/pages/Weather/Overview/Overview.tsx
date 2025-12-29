@@ -20,6 +20,8 @@ import Sun from "../../../components/icons/Sun/Sun.tsx";
 import UVIndex from "./Details/UVIndex/UVIndex.tsx";
 import PressureIcon from "../../../components/icons/Pressure/Pressure.tsx";
 import Pressure from "./Details/Pressure/Pressure.tsx";
+import WindIcon from "../../../components/icons/Wind/Wind.tsx";
+import Wind from "./Details/Wind/Wind.tsx";
 
 const Overview = () => {
     const {forecast} = useWeather()
@@ -96,6 +98,16 @@ const Overview = () => {
                                     title={'pressure'}
                                 >
                                     <Pressure />
+                                </TitledSection>
+                            </DetailBackground>
+                        </div>
+                        <div className={styles['wind-box']}>
+                            <DetailBackground>
+                                <TitledSection
+                                    titleIcon={<WindIcon customClass={styles['wind-title-icon']} />}
+                                    title={'wind'}
+                                >
+                                    <Wind />
                                 </TitledSection>
                             </DetailBackground>
                         </div>

@@ -29,13 +29,18 @@
     width: calc((100% - 20px) / 2);
 }
 
+.wind-box {
+    width: 100%;
+}
+
 .cloud-title-icon,
 .visibility-title-icon,
 .precipitation-title-icon,
 .humidity-title-icon,
 .feelslike-title-icon,
 .uv-title-icon,
-.pressure-title-icon {
+.pressure-title-icon,
+.wind-title-icon {
     height: 18px;
 }
 
@@ -44,7 +49,8 @@
 .precipitation-title-icon path,
 .humidity-title-icon path,
 .uv-title-icon path,
-.pressure-title-icon path {
+.pressure-title-icon path,
+.wind-title-icon path {
     fill: white;
 }
 

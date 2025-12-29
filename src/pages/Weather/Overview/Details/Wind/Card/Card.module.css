@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.value {
+    color: white;
+    font-size: 18px;
+}
