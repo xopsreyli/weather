@@ -1,15 +1,15 @@
+import React from "react";
 import styles from './HourCard.module.css'
 import Temperature from "../../../../../../components/ui/Temperature/Temperature.tsx";
 
-type HourForecastCardProps = {
-    dateTime: string;
+export type HourCardProps = {
+    time: string;
     isNow?: boolean;
-    iconLink: string;
-    temperature: number;
+    displayValue: number | string;
+    children: React.ReactNode;
 }
 
-const HourCard = ({dateTime, isNow = false, iconLink, temperature}: HourForecastCardProps) => {
-    const hours: string = dateTime.split(' ')[1].split(':')[0]
+const HourCard = ({time, isNow = false, displayValue, children}: HourCardProps) => {
     const cardClasses: string = [
         styles.box,
         isNow && styles.now
@@ -17,12 +17,18 @@ const HourCard = ({dateTime, isNow = false, iconLink, temperature}: HourForecast
 
     return (
         <div className={cardClasses}>
-            <time className={styles.hours}>{isNow ? 'Now' : hours}</time>
-            <img className={styles.icon} src={iconLink} alt="weather icon"/>
-            <Temperature
-                temperature={Math.round(temperature)}
-                tempClass={styles.temperature}
-            />
+            <time className={styles.time}>{isNow ? 'Now' : time}</time>
+            <div className={styles['children-box']}>
+                {children}
+            </div>
+            {
+                typeof displayValue === 'number' ?
+                    <Temperature
+                        temperature={Math.round(displayValue)}
+                        tempClass={styles.value}
+                    /> :
+                    <p className={styles.value}>{displayValue}</p>
+            }
         </div>
     );
 };

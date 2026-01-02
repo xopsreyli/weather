@@ -11,16 +11,16 @@
     border-radius: 6px;
 }
 
-.hours {
+.time {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
 }
 
-.icon {
+.children-box {
     width: 40px;
 }
 
-.temperature {
+.value {
     color: white;
     font-size: 16px;
     font-weight: 700;

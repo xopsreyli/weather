@@ -2,3 +2,54 @@
     display: flex;
     gap: 8px;
 }
+
+.card__icon {
+    width: 100%;
+}
+
+.card__sun-box {
+    width: 40px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.card__sun {
+    width: 28px;
+}
+
+.card__sun path {
+    fill: #FFD43B;
+}
+
+.sunset {
+    animation: 7.5s ease-out infinite sunset;
+}
+
+.sunrise {
+    animation: 7.5s ease-out infinite sunrise;
+}
+
+@keyframes sunset {
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes sunrise {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
