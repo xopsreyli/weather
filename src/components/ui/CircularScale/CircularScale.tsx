@@ -37,8 +37,8 @@ const CircularScale = ({tickEveryDegrees, min, max, current, measurementUnit}: R
             </div>
             <span className={styles.value}>{current}</span>
             <span className={styles.measurement}>{measurementUnit}</span>
-            <Arrow customClass={[styles.arrow, styles['arrow--up']].join(' ')} />
-            <Arrow customClass={[styles.arrow, styles['arrow--down']].join(' ')} />
+            <Arrow className={[styles.arrow, styles['arrow--up']].join(' ')} />
+            <Arrow className={[styles.arrow, styles['arrow--down']].join(' ')} />
         </div>
     );
 };

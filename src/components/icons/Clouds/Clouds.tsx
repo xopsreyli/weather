@@ -1,10 +1,10 @@
 type CloudsProps = {
-    customClass?: string;
+    className?: string;
 }
 
-const Clouds = ({customClass}: CloudsProps) => {
+const Clouds = ({className}: CloudsProps) => {
     return (
-        <svg className={customClass} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+        <svg className={className} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
              xmlnsXlink="http://www.w3.org/1999/xlink"
              viewBox="0 0 376.22 376.22" xmlSpace="preserve">
             <g>

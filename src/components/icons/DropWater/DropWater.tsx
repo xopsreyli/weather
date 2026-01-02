@@ -1,10 +1,10 @@
 type DropWaterProps = {
-    customClass?: string,
+    className?: string,
 }
 
-const DropWater = ({customClass}: DropWaterProps) => {
+const DropWater = ({className}: DropWaterProps) => {
     return (
-        <svg className={customClass} viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        <svg className={className} viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg"
              xmlnsXlink="http://www.w3.org/1999/xlink">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <path

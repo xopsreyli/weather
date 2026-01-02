@@ -34,7 +34,7 @@ const insertSunCard = (suntime: string, displayValue: string, style: string, car
                 displayValue={displayValue}
             >
                 <div className={styles['card__sun-box']}>
-                    <Sun customClass={[styles['card__sun'], style].join(' ')} />
+                    <Sun className={[styles['card__sun'], style].join(' ')} />
                 </div>
             </HourCard>
         )

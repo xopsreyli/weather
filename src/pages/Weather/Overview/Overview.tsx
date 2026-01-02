@@ -34,7 +34,7 @@ const Overview = () => {
                         <div className={styles['feelslike-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<Thermometer customClass={styles['feelslike-title-icon']} />}
+                                    titleIcon={<Thermometer className={styles['feelslike-title-icon']} />}
                                     title={'feels like'}
                                 >
                                     <FeelsLike />
@@ -44,7 +44,7 @@ const Overview = () => {
                         <div className={styles['uv-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<Sun customClass={styles['uv-title-icon']} />}
+                                    titleIcon={<Sun className={styles['uv-title-icon']} />}
                                     title={'UV-Index'}
                                 >
                                     <UVIndex />
@@ -54,7 +54,7 @@ const Overview = () => {
                         <div className={styles['wind-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<WindIcon customClass={styles['wind-title-icon']} />}
+                                    titleIcon={<WindIcon className={styles['wind-title-icon']} />}
                                     title={'wind'}
                                 >
                                     <Wind />
@@ -64,7 +64,7 @@ const Overview = () => {
                         <div className={styles['cloud-coverage-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<Cloud customClass={styles['cloud-title-icon']} />}
+                                    titleIcon={<Cloud className={styles['cloud-title-icon']} />}
                                     title={'Cloud coverage(%)'}
                                 >
                                     <CloudCoverage />
@@ -74,7 +74,7 @@ const Overview = () => {
                         <div className={styles['pressure-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<PressureIcon customClass={styles['pressure-title-icon']} />}
+                                    titleIcon={<PressureIcon className={styles['pressure-title-icon']} />}
                                     title={'pressure'}
                                 >
                                     <Pressure />
@@ -84,7 +84,7 @@ const Overview = () => {
                         <div className={styles['visibility-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<Eye customClass={styles['visibility-title-icon']} />}
+                                    titleIcon={<Eye className={styles['visibility-title-icon']} />}
                                     title={'visibility'}
                                 >
                                     <Visibility />
@@ -94,7 +94,7 @@ const Overview = () => {
                         <div className={styles['precipitation-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<DropWater customClass={styles['precipitation-title-icon']} />}
+                                    titleIcon={<DropWater className={styles['precipitation-title-icon']} />}
                                     title={'precipitation'}
                                 >
                                     <Precipitation />
@@ -104,7 +104,7 @@ const Overview = () => {
                         <div className={styles['humidity-box']}>
                             <DetailBackground>
                                 <TitledSection
-                                    titleIcon={<HumidityIcon customClass={styles['humidity-title-icon']} />}
+                                    titleIcon={<HumidityIcon className={styles['humidity-title-icon']} />}
                                     title={'humidity'}
                                 >
                                     <Humidity />

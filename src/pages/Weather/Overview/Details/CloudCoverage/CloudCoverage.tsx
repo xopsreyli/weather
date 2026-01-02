@@ -7,7 +7,7 @@ const CloudCoverage = () => {
 
     return (
         <div className={styles.box}>
-            <Clouds customClass={styles.icon}/>
+            <Clouds className={styles.icon}/>
             <span
                 className={[
                     styles.percentage,

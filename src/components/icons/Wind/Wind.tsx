@@ -1,10 +1,10 @@
 type WindProps = {
-    customClass?: string
+    className?: string
 }
 
-const Wind = ({customClass}: WindProps) => {
+const Wind = ({className}: WindProps) => {
     return (
-        <svg className={customClass} viewBox="0 -1 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        <svg className={className} viewBox="0 -1 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg"
              xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="Icon-Set-Filled" transform="translate(-468.000000, -832.000000)"
