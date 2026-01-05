@@ -34,6 +34,7 @@ const WeatherProvider = ({children}: WeatherProviderProps) => {
         staleTime: 1000 * 60 * 5,
         gcTime: 1000 * 60 * 5,
         placeholderData: (previousData) => previousData,
+        retry: false,
     })
 
     useEffect(() => {
