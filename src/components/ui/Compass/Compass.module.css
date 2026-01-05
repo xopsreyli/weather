@@ -17,7 +17,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    transition: 0.5s ease-out;
+    transition: 1s ease-out;
     z-index: 1;
 }
 
