@@ -17,8 +17,10 @@ const ScrollBox = ({axis, children}: ScrollYBoxProps) => {
 
         const onWheelScroll = (e: WheelEvent) => {
             e.preventDefault();
+            const scrollByValue = e.deltaY
+
             el.scrollBy({
-                left: e.deltaY > 0 ? 100 : -100,
+                left: scrollByValue,
                 behavior: 'smooth',
             })
         }

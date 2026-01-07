@@ -59,3 +59,34 @@
     background-color: #fff;
     filter: drop-shadow(0 0 2px #fff);
 }
+
+@media screen and (max-width: 1280px) {
+    .page,
+    .box {
+        padding: 20px;
+    }
+
+    .box {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .page {
+        padding: 0;
+    }
+
+    .box {
+       border-radius: unset;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        flex-direction: column;
+    }
+
+    .box > hr {
+        display: none;
+    }
+}

@@ -1,5 +1,6 @@
 .box {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 40px;
 }
@@ -12,6 +13,35 @@
 }
 
 .compass-box {
-    width: max(25%, 180px);
-    aspect-ratio: 1;
+    flex: 0 0 180px;
+}
+
+@media screen and (max-width: 1580px) {
+    .box {
+        gap: 20px;
+    }
+
+    .compass-box {
+        flex-basis: 160px;
+    }
+}
+
+@media screen and (max-width: 1460px) {
+    .box {
+        gap: 40px;
+    }
+
+    .compass-box {
+        flex-basis: 180px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .box {
+        gap: 20px;
+    }
+
+    .compass-box {
+        flex: 1 1 100%;
+    }
 }

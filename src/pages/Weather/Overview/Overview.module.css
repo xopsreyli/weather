@@ -1,19 +1,20 @@
 .box {
-    width: calc(100% - 481px);
+    min-width: 0;
+    flex: 3;
     display: flex;
     gap: 40px;
 }
 
 .details-box {
-    flex: 1;
+    flex: 3;
 }
 
 .forecasts-box {
-    width: 480px;
+    min-width: 440px;
+    flex: 2;
 }
 
 .details {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -23,17 +24,17 @@
 .feelslike-box,
 .uv-box,
 .pressure-box {
-    width: calc((100% - 20px) / 2);
+    flex: 1 1 calc((100% - 20px) / 2);
 }
 
 .wind-box {
-    width: 100%;
+    flex: 1 1 100%;
 }
 
 .visibility-box,
 .precipitation-box,
 .humidity-box {
-    width: calc((100% - 40px) / 3);
+    flex: 1 1 calc((100% - 40px) / 3);
 }
 
 .cloud-title-icon,
@@ -65,4 +66,73 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+@media screen and (max-width: 1580px) {
+    .cloud-coverage-box,
+    .feelslike-box,
+    .uv-box,
+    .pressure-box {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 1460px) {
+    .box {
+        flex: 2;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .box::-webkit-scrollbar {
+        display: none;
+    }
+
+    .details-box,
+    .forecasts-box {
+        flex: 1 1 100%;
+    }
+
+    .forecasts-box {
+        order: -1;
+    }
+
+    .cloud-coverage-box,
+    .feelslike-box,
+    .uv-box,
+    .pressure-box {
+        flex-basis: calc((100% - 20px) / 2);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .box {
+        flex: 3;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .box {
+        flex: 1;
+    }
+
+    .forecasts-box {
+        min-width: 0;
+    }
+
+    .cloud-coverage-box,
+    .feelslike-box,
+    .uv-box,
+    .pressure-box {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        flex-basis: 100%;
+    }
 }

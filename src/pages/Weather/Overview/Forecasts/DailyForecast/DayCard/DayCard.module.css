@@ -38,3 +38,9 @@
 .indicator-box {
     position: absolute;
 }
+
+@media screen and (max-width: 992px) {
+    .box {
+        gap: 8px;
+    }
+}
