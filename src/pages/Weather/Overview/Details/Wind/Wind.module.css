@@ -43,5 +43,27 @@
 
     .compass-box {
         flex: 1 1 100%;
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .compass-box {
+        flex: 0 0 180px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .compass-box {
+        flex: 0 0 160px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .compass-box {
+        flex: 1 1 100%;
+        padding: 0 40px;
     }
 }

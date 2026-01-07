@@ -135,4 +135,32 @@
     .box {
         flex-basis: 100%;
     }
+
+    .cloud-coverage-box,
+    .feelslike-box,
+    .uv-box,
+    .pressure-box {
+        flex-basis: calc((100% - 20px) / 2);
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .box {
+        flex-basis: 100%;
+    }
+
+    .cloud-coverage-box,
+    .feelslike-box,
+    .uv-box,
+    .pressure-box {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    .visibility-box,
+    .precipitation-box,
+    .humidity-box {
+        flex-basis: 100%;
+    }
 }
