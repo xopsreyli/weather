@@ -24,118 +24,122 @@ import WindIcon from "../../../components/icons/Wind/Wind.tsx";
 import Wind from "./Details/Wind/Wind.tsx";
 
 const Overview = () => {
-    const {forecast} = useWeather()
+    const {location, forecast} = useWeather()
 
     return (
         <div className={styles.box}>
-            <div className={styles['details-box']}>
-                <ScrollBox axis={axes.Y}>
-                    <div className={styles.details}>
-                        <div className={styles['feelslike-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<Thermometer className={styles['feelslike-title-icon']} />}
-                                    title={'feels like'}
-                                >
-                                    <FeelsLike />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['uv-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<Sun className={styles['uv-title-icon']} />}
-                                    title={'UV-Index'}
-                                >
-                                    <UVIndex />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['wind-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<WindIcon className={styles['wind-title-icon']} />}
-                                    title={'wind'}
-                                >
-                                    <Wind />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['cloud-coverage-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<Cloud className={styles['cloud-title-icon']} />}
-                                    title={'Cloud coverage(%)'}
-                                >
-                                    <CloudCoverage />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['pressure-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<PressureIcon className={styles['pressure-title-icon']} />}
-                                    title={'pressure'}
-                                >
-                                    <Pressure />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['visibility-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<Eye className={styles['visibility-title-icon']} />}
-                                    title={'visibility'}
-                                >
-                                    <Visibility />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['precipitation-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<DropWater className={styles['precipitation-title-icon']} />}
-                                    title={'precipitation'}
-                                >
-                                    <Precipitation />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
-                        <div className={styles['humidity-box']}>
-                            <DetailBackground>
-                                <TitledSection
-                                    titleIcon={<HumidityIcon className={styles['humidity-title-icon']} />}
-                                    title={'humidity'}
-                                >
-                                    <Humidity />
-                                </TitledSection>
-                            </DetailBackground>
-                        </div>
+            {location && (
+                <>
+                    <div className={styles['details-box']}>
+                        <ScrollBox axis={axes.Y}>
+                            <div className={styles.details}>
+                                <div className={styles['feelslike-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<Thermometer className={styles['feelslike-title-icon']} />}
+                                            title={'feels like'}
+                                        >
+                                            <FeelsLike />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                                <div className={styles['uv-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<Sun className={styles['uv-title-icon']} />}
+                                            title={'UV-Index'}
+                                        >
+                                            <UVIndex />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                                <div className={styles['wind-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<WindIcon className={styles['wind-title-icon']} />}
+                                            title={'wind'}
+                                        >
+                                            <Wind />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                                <div className={styles['cloud-coverage-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<Cloud className={styles['cloud-title-icon']} />}
+                                            title={'Cloud coverage(%)'}
+                                        >
+                                            <CloudCoverage />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                                <div className={styles['pressure-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<PressureIcon className={styles['pressure-title-icon']} />}
+                                            title={'pressure'}
+                                        >
+                                            <Pressure />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                                <div className={styles['visibility-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<Eye className={styles['visibility-title-icon']} />}
+                                            title={'visibility'}
+                                        >
+                                            <Visibility />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                                <div className={styles['precipitation-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<DropWater className={styles['precipitation-title-icon']} />}
+                                            title={'precipitation'}
+                                        >
+                                            <Precipitation />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                                <div className={styles['humidity-box']}>
+                                    <DetailBackground>
+                                        <TitledSection
+                                            titleIcon={<HumidityIcon className={styles['humidity-title-icon']} />}
+                                            title={'humidity'}
+                                        >
+                                            <Humidity />
+                                        </TitledSection>
+                                    </DetailBackground>
+                                </div>
+                            </div>
+                        </ScrollBox>
                     </div>
-                </ScrollBox>
-            </div>
-            <div className={styles['forecasts-box']}>
-                <ScrollBox axis={axes.Y}>
-                    <div className={styles.forecasts}>
-                        <DetailBackground>
-                            <TitledSection
-                                title={'24-Hours Forecast'}
-                                showDivider
-                            >
-                                <HourlyForecast />
-                            </TitledSection>
-                        </DetailBackground>
-                        <DetailBackground>
-                            <TitledSection
-                                title={`${forecast.forecastday.length}-Day Forecast`}
-                                showDivider
-                            >
-                                <DailyForecast />
-                            </TitledSection>
-                        </DetailBackground>
+                    <div className={styles['forecasts-box']}>
+                        <ScrollBox axis={axes.Y}>
+                            <div className={styles.forecasts}>
+                                <DetailBackground>
+                                    <TitledSection
+                                        title={'24-Hours Forecast'}
+                                        showDivider
+                                    >
+                                        <HourlyForecast />
+                                    </TitledSection>
+                                </DetailBackground>
+                                <DetailBackground>
+                                    <TitledSection
+                                        title={`${forecast.forecastday.length}-Day Forecast`}
+                                        showDivider
+                                    >
+                                        <DailyForecast />
+                                    </TitledSection>
+                                </DetailBackground>
+                            </div>
+                        </ScrollBox>
                     </div>
-                </ScrollBox>
-            </div>
+                </>
+            )}
         </div>
     );
 };

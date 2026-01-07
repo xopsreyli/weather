@@ -18,10 +18,10 @@ const Weather = () => {
 }
 
 const WeatherContent = () => {
-    const {isPending, isError, error} = useWeather();
+    const {location, isPending, isError, error} = useWeather();
     const navigate = useNavigate()
 
-    if (isPending) {
+    if (isPending && location) {
         return (
             <div className={styles.box}>
                 <Loading/>

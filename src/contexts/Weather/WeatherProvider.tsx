@@ -38,10 +38,12 @@ const WeatherProvider = ({children}: WeatherProviderProps) => {
     })
 
     useEffect(() => {
-        if (!location) {
+        if (!localStorage.getItem("userLocation")) {
             window.navigator.geolocation.getCurrentPosition((position) => {
                 const currentCoords = `${position.coords.latitude},${position.coords.longitude}`
-                setLocation(currentCoords)
+                if (!location) {
+                    setLocation(currentCoords)
+                }
                 localStorage.setItem('userLocation', currentCoords)
             })
         }
