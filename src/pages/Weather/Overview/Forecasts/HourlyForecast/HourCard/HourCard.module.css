@@ -8,12 +8,12 @@
 }
 
 .now {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(from var(--theme-black) r g b / 0.1);
     border-radius: 6px;
 }
 
 .time {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(from var(--theme-black) r g b / 0.8);
     font-size: 14px;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .value {
-    color: white;
+    color: var(--theme-black);
     font-size: 16px;
     font-weight: 700;
 }

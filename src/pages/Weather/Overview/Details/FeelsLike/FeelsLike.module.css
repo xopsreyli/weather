@@ -5,7 +5,7 @@
 }
 
 .feelslike {
-    color: white;
+    color: var(--theme-black);
     font-size: 32px;
 }
 
@@ -23,7 +23,7 @@
     display: block;
     width: 4px;
     height: 16px;
-    background-color: white;
+    background-color: var(--theme-black);
     border-radius: 2px;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -48,15 +48,15 @@
 }
 
 .difference--none .difference__track {
-    background: white;
+    background: var(--theme-black);
 }
 
 .difference--hotter .difference__track {
-    background: yellow;
+    background: var(--illusion-yellow);
 }
 
 .difference--colder .difference__track {
-    background: lightskyblue;
+    background: var(--light-sky-blue);
 }
 
 .difference {
@@ -64,22 +64,22 @@
     width: max-content;
     display: flex;
     align-items: center;
-    background-color: #161616;
+    background-color: var(--theme-echo-white);
     border-radius: 6px;
     padding: 4px;
     z-index: 1;
 }
 
 .difference--none .difference {
-    border: 2px solid white;
+    border: 2px solid var(--theme-black);
 }
 
 .difference--hotter .difference {
-    border: 2px solid yellow;
+    border: 2px solid var(--illusion-yellow);
 }
 
 .difference--colder .difference {
-    border: 2px solid lightskyblue;
+    border: 2px solid var(--light-sky-blue);
 }
 
 .difference__icon {
@@ -87,7 +87,7 @@
 }
 
 .difference__icon path {
-    stroke: white;
+    stroke: var(--theme-black);
 }
 
 .difference--none .difference__icon {
@@ -99,7 +99,7 @@
 }
 
 .difference__temperature {
-    color: white;
+    color: var(--theme-black);
     font-size: 18px;
 }
 
@@ -111,5 +111,5 @@
 
 .actual,
 .windchill {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(from var(--theme-black) r g b / 0.8);
 }

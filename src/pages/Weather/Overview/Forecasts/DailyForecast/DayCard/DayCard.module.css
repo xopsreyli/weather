@@ -9,12 +9,12 @@
 }
 
 .today {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(from var(--theme-black) r g b / 0.1);
     border-radius: 6px;
 }
 
 .day {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(from var(--theme-black) r g b / 0.8);
 }
 
 .icon {
@@ -23,7 +23,7 @@
 
 .temperature {
     text-align: right;
-    color: white;
+    color: var(--theme-black);
     font-weight: 700;
 }
 
@@ -32,7 +32,7 @@
     width: 100%;
     height: 4px;
     border-radius: 2px;
-    background: #000;
+    background: var(--theme-white);
 }
 
 .indicator-box {

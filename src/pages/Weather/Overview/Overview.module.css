@@ -55,11 +55,11 @@
 .uv-title-icon path,
 .pressure-title-icon path,
 .wind-title-icon path {
-    fill: white;
+    fill: var(--theme-black);
 }
 
 .feelslike-title-icon path {
-    stroke: white;
+    stroke: var(--theme-black);
 }
 
 .forecasts {

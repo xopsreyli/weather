@@ -3,6 +3,6 @@
 }
 
 .visibility {
-    color: white;
+    color: var(--theme-black);
     font-size: 32px;
 }

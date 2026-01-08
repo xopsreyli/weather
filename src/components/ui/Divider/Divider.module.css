@@ -1,6 +1,6 @@
 .divider {
     border: none;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgb(from var(--theme-black) r g b / 0.6);
 }
 
 .vertical {

@@ -1,5 +1,5 @@
 import styles from './Pressure.module.css'
-import RoundScale from "../../../../../components/ui/CircularScale/CircularScale.tsx";
+import CircularScale from "../../../../../components/ui/CircularScale/CircularScale.tsx";
 import {useWeather} from "../../../../../contexts/Weather/Weather.ts";
 
 const Pressure = () => {
@@ -7,7 +7,7 @@ const Pressure = () => {
 
     return (
         <div className={styles.box}>
-            <RoundScale
+            <CircularScale
                 tickEveryDegrees={5}
                 min={870}
                 max={1085}

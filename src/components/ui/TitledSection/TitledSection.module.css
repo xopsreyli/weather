@@ -7,6 +7,6 @@
 }
 
 .title {
-    color: white;
+    color: var(--theme-black);
     font-size: 18px;
 }

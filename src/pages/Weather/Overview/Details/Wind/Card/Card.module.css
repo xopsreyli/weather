@@ -6,10 +6,10 @@
 
 .name {
     text-transform: capitalize;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(form var(--theme-black) r g b / 0.8);
 }
 
 .value {
-    color: white;
+    color: var(--theme-black);
     font-size: 18px;
 }

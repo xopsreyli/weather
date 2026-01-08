@@ -1,0 +1,9 @@
+:root {
+    color-scheme: light dark;
+
+    --theme-black: light-dark(var(--black), var(--white));
+    --theme-white: light-dark(var(--white), var(--black));
+    --theme-light-gray: light-dark(var(--light-gray), var(--metallic-black));
+    --theme-echo-white: light-dark(var(--echo-white), var(--dull-black));
+    --theme-silvery-white: light-dark(var(--silvery-white), var(--blackboard));
+}

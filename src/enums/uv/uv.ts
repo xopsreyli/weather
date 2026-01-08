@@ -7,11 +7,11 @@ export const LEVELS = {
 } as const
 
 export const COLORS = {
-    [LEVELS.low]: '#00ff00',
-    [LEVELS.moderate]: '#ffff00',
-    [LEVELS.high]: '#ff8000',
-    [LEVELS.very_high]: '#ff0000',
-    [LEVELS.excessive]: '#d400d4',
+    [LEVELS.low]: '#05a417',
+    [LEVELS.moderate]: '#eedf38',
+    [LEVELS.high]: '#ed7a1c',
+    [LEVELS.very_high]: '#e02620',
+    [LEVELS.excessive]: '#9e3ac3',
 } as const
 
 export const SUGGESTIONS = {
