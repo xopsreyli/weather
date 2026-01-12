@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    cursor: pointer;
+    width: 40px;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.menu-btn__icon {
+    width: 100%;
+}
+
+.menu-btn__icon path {
+    stroke: rgb(from var(--theme-black) r g b / 0.8);
+    transition: 0.3s ease-out;
+}
+
+.menu-btn:hover .menu-btn__icon path {
+    stroke: var(--theme-black);
+}
+
+.menu-btn:hover:active .menu-btn__icon path {
+    stroke: transparent;
+}

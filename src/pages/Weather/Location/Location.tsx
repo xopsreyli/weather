@@ -8,75 +8,91 @@ import {getTemperatureColor} from "../../../utils/temperatureColors/tempterature
 import Temperature from "../../../components/ui/Temperature/Temperature.tsx";
 import Arrow from "../../../components/icons/Arrow/Arrow.tsx";
 import Divider from "../../../components/ui/Divider/Divider.tsx";
+import Header from "./Header/Header.tsx";
+import Menu from "./Menu/Menu.tsx";
+import {useState} from "react";
 
 const Location = () => {
     const {location, setLocation, locationInfo, current, forecast} = useWeather();
     const [searchParams] = useSearchParams()
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
     const userLocation = localStorage.getItem("userLocation") || ''
+
+    const toggleMenu = () => {
+        setIsMenuOpen(v => !v)
+    }
 
     return (
         <div className={styles.box}>
             <ScrollBox axis={axes.Y}>
-                <div className={styles.content}>
-                    <SearchBar
-                        setValue={setLocation}
-                        placeholder={'Search for city'}
+                <div className={styles.wrapper}>
+                    <Header
+                        toggleMenu={toggleMenu}
                     />
-                    {location && (
-                        <>
-                            <div className={styles.location}>
-                                <p className={styles['location__name']}>{locationInfo.name}</p>
-                                <p className={styles['location__region']}>{
-                                    locationInfo.region ?
-                                        `${locationInfo.region}, ${locationInfo.country}` :
-                                        locationInfo.country
-                                }</p>
-                            </div>
-                            <div className={styles.condition}>
-                                <div
-                                    className={styles['condition__main']}
-                                    style={{
-                                        borderBottom: `2px solid ${getTemperatureColor(Math.round(current.temp_c))}`
-                                    }}
-                                >
-                                    <img className={styles['condition__icon']} src={current.condition.icon}
-                                         alt={current.condition.text}/>
-                                    <Temperature
-                                        temperature={Math.round(current.temp_c)}
-                                        tempClass={styles['condition__temperature']}
-                                    />
+                    <Menu
+                        isOpen={isMenuOpen}
+                    />
+                    <div className={styles.content}>
+                        <SearchBar
+                            setValue={setLocation}
+                            placeholder={'Search for city'}
+                        />
+                        {location && (
+                            <>
+                                <div className={styles.location}>
+                                    <p className={styles['location__name']}>{locationInfo.name}</p>
+                                    <p className={styles['location__region']}>{
+                                        locationInfo.region ?
+                                            `${locationInfo.region}, ${locationInfo.country}` :
+                                            locationInfo.country
+                                    }</p>
                                 </div>
-                                <p className={styles.condition__text}>{current.condition.text}</p>
-                                <div className={styles['condition__min-max']}>
-                                    <div className={styles['min-max']}>
-                                        <Arrow className={[styles['min-max__arrow'], styles['min-max__arrow--down']].join(' ')} />
-                                        <Temperature
-                                            tempClass={styles['min-max__temperature']}
-                                            temperature={Math.round(forecast.forecastday[0].day.mintemp_c)}
-                                        />
-                                    </div>
-                                    <Divider />
-                                    <div className={styles['min-max']}>
-                                        <Temperature
-                                            tempClass={styles['min-max__temperature']}
-                                            temperature={Math.round(forecast.forecastday[0].day.maxtemp_c)}
-                                        />
-                                        <Arrow className={styles['min-max__arrow']} />
-                                    </div>
-                                </div>
-                            </div>
-                            {(userLocation && searchParams.get('location') !== userLocation) && (
-                                <div className={styles['reset-box']}>
-                                    <button
-                                        className={styles.reset}
-                                        onClick={() => setLocation(userLocation)}
+                                <div className={styles.condition}>
+                                    <div
+                                        className={styles['condition__main']}
+                                        style={{
+                                            borderBottom: `2px solid ${getTemperatureColor(Math.round(current.temp_c))}`
+                                        }}
                                     >
-                                        reset to my location
-                                    </button>
+                                        <img className={styles['condition__icon']} src={current.condition.icon}
+                                             alt={current.condition.text}/>
+                                        <Temperature
+                                            temperature={Math.round(current.temp_c)}
+                                            tempClass={styles['condition__temperature']}
+                                        />
+                                    </div>
+                                    <p className={styles.condition__text}>{current.condition.text}</p>
+                                    <div className={styles['condition__min-max']}>
+                                        <div className={styles['min-max']}>
+                                            <Arrow className={[styles['min-max__arrow'], styles['min-max__arrow--down']].join(' ')} />
+                                            <Temperature
+                                                tempClass={styles['min-max__temperature']}
+                                                temperature={Math.round(forecast.forecastday[0].day.mintemp_c)}
+                                            />
+                                        </div>
+                                        <Divider />
+                                        <div className={styles['min-max']}>
+                                            <Temperature
+                                                tempClass={styles['min-max__temperature']}
+                                                temperature={Math.round(forecast.forecastday[0].day.maxtemp_c)}
+                                            />
+                                            <Arrow className={styles['min-max__arrow']} />
+                                        </div>
+                                    </div>
                                 </div>
-                            )}
-                        </>
-                    )}
+                                {(userLocation && searchParams.get('location') !== userLocation) && (
+                                    <div className={styles['reset-box']}>
+                                        <button
+                                            className={styles.reset}
+                                            onClick={() => setLocation(userLocation)}
+                                        >
+                                            reset to my location
+                                        </button>
+                                    </div>
+                                )}
+                            </>
+                        )}
+                    </div>
                 </div>
             </ScrollBox>
         </div>
