@@ -1,0 +1,29 @@
+.switch {
+    cursor: pointer;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(from var(--theme-black) r g b / 0.2);
+    box-shadow: inset 0 0 4px var(--theme-white);
+}
+
+.switch::before {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    content: '';
+    width: 32px;
+    aspect-ratio: 1;
+    display: block;
+    background-color: var(--theme-black);
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px var(--theme-white);
+    transition: 0.25s ease-out;
+}
+
+.switch--enabled::before {
+    transform: translateX(40px);
+}

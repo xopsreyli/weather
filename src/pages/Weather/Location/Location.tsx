@@ -9,17 +9,17 @@ import Temperature from "../../../components/ui/Temperature/Temperature.tsx";
 import Arrow from "../../../components/icons/Arrow/Arrow.tsx";
 import Divider from "../../../components/ui/Divider/Divider.tsx";
 import Header from "./Header/Header.tsx";
-import Menu from "./Menu/Menu.tsx";
+import Settings from "./Settings/Settings.tsx";
 import {useState} from "react";
 
 const Location = () => {
     const {location, setLocation, locationInfo, current, forecast} = useWeather();
     const [searchParams] = useSearchParams()
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+    const [isSettingsOpened, setIsSettingsOpened] = useState<boolean>(false)
     const userLocation = localStorage.getItem("userLocation") || ''
 
-    const toggleMenu = () => {
-        setIsMenuOpen(v => !v)
+    const toggleSettings = () => {
+        setIsSettingsOpened(v => !v)
     }
 
     return (
@@ -27,10 +27,10 @@ const Location = () => {
             <ScrollBox axis={axes.Y}>
                 <div className={styles.wrapper}>
                     <Header
-                        toggleMenu={toggleMenu}
+                        toggleMenu={toggleSettings}
                     />
-                    <Menu
-                        isOpen={isMenuOpen}
+                    <Settings
+                        isOpen={isSettingsOpened}
                     />
                     <div className={styles.content}>
                         <SearchBar

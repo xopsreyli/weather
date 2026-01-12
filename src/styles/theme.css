@@ -7,3 +7,11 @@
     --theme-echo-white: light-dark(var(--echo-white), var(--dull-black));
     --theme-silvery-white: light-dark(var(--silvery-white), var(--blackboard));
 }
+
+html[data-theme='light'] {
+    color-scheme: light;
+}
+
+html[data-theme='dark'] {
+    color-scheme: dark;
+}
