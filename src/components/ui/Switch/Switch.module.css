@@ -1,6 +1,7 @@
 .switch {
     cursor: pointer;
     position: relative;
+    display: block;
     width: 80px;
     height: 40px;
     border: none;
@@ -26,4 +27,8 @@
 
 .switch--enabled::before {
     transform: translateX(40px);
+}
+
+.switch > input {
+    display: none;
 }

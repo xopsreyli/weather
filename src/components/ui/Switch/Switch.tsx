@@ -1,29 +1,36 @@
 import styles from './Switch.module.css'
-import {useState} from "react";
+import {type ChangeEvent, useState} from "react";
 
 type SwitchProps = {
-    isEnabled?: boolean,
-    onSwitch?: () => void,
+    isChecked?: boolean,
+    onSwitch?: (checked: boolean) => void,
 }
 
-const Switch = ({isEnabled = false, onSwitch = () => {}}: SwitchProps) => {
-    const [enabled, setEnabled] = useState<boolean>(isEnabled)
+const Switch = ({isChecked = false, onSwitch}: SwitchProps) => {
+    const [checked, setChecked] = useState<boolean>(isChecked)
 
-    const toggle = () => {
-        setEnabled(v => !v)
-        onSwitch()
+    const toggle = (e: ChangeEvent<HTMLInputElement>) => {
+        setChecked(e.target.checked)
+        onSwitch?.(e.target.checked)
     }
 
     const classes: string = [
         styles.switch,
-        enabled && styles['switch--enabled'],
+        checked && styles['switch--enabled'],
     ].join(' ')
 
     return (
-        <button
+        <label
             className={classes}
-            onClick={toggle}
-        ></button>
+            htmlFor="switch"
+        >
+            <input
+                type="checkbox"
+                id="switch"
+                checked={checked}
+                onChange={toggle}
+            />
+        </label>
     );
 };
 

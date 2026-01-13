@@ -14,8 +14,8 @@ type MenuProps = {
 const Settings = ({isOpen}: MenuProps) => {
     const {theme, setTheme} = useTheme()
 
-    const switchTheme = useCallback(() => {
-        setTheme(theme => theme === LIGHT ? DARK : LIGHT)
+    const switchTheme = useCallback((isEnabled: boolean) => {
+        setTheme(isEnabled ? DARK : LIGHT)
     }, [setTheme])
 
     const menuBoxClasses: string = [
@@ -29,7 +29,7 @@ const Settings = ({isOpen}: MenuProps) => {
                 <div className={styles.content}>
                     <Card title={'Theme ( light / dark )'} >
                         <Switch
-                            isEnabled={theme === DARK}
+                            isChecked={theme === DARK}
                             onSwitch={switchTheme}
                         />
                     </Card>
