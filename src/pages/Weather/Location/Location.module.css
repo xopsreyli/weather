@@ -134,7 +134,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .box > div {
-        overflow: visible;
+    .wrapper {
+        padding-top: 60px;
     }
 }

@@ -1,6 +1,7 @@
 .header {
     display: flex;
     align-items: center;
+    background-color: var(--theme-silvery-white);
 }
 
 .menu-btn {
@@ -27,4 +28,15 @@
 
 .menu-btn:hover:active .menu-btn__icon path {
     stroke: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 100;
+    }
 }
