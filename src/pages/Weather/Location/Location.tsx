@@ -11,9 +11,11 @@ import Divider from "../../../components/ui/Divider/Divider.tsx";
 import Header from "./Header/Header.tsx";
 import Settings from "./Settings/Settings.tsx";
 import {useState} from "react";
+import {useSettings} from "../../../contexts/Settings/Settings.ts";
 
 const Location = () => {
     const {location, setLocation, locationInfo, current, forecast} = useWeather();
+    const {isCelsius} = useSettings()
     const [searchParams] = useSearchParams()
     const [isSettingsOpened, setIsSettingsOpened] = useState<boolean>(false)
     const userLocation = localStorage.getItem("userLocation") || ''
@@ -21,6 +23,10 @@ const Location = () => {
     const toggleSettings = () => {
         setIsSettingsOpened(v => !v)
     }
+
+    const currentTemperature = isCelsius ? current.temp_c : current.temp_f
+    const minTemperature = isCelsius ? forecast.forecastday[0].day.mintemp_c : forecast.forecastday[0].day.mintemp_f
+    const maxTemperature = isCelsius ? forecast.forecastday[0].day.maxtemp_c : forecast.forecastday[0].day.maxtemp_f
 
     return (
         <div className={styles.box}>
@@ -51,13 +57,13 @@ const Location = () => {
                                     <div
                                         className={styles['condition__main']}
                                         style={{
-                                            borderBottom: `2px solid ${getTemperatureColor(Math.round(current.temp_c))}`
+                                            borderBottom: `2px solid ${getTemperatureColor(Math.round(currentTemperature), isCelsius)}`,
                                         }}
                                     >
                                         <img className={styles['condition__icon']} src={current.condition.icon}
                                              alt={current.condition.text}/>
                                         <Temperature
-                                            temperature={Math.round(current.temp_c)}
+                                            temperature={Math.round(currentTemperature)}
                                             tempClass={styles['condition__temperature']}
                                         />
                                     </div>
@@ -67,14 +73,14 @@ const Location = () => {
                                             <Arrow className={[styles['min-max__arrow'], styles['min-max__arrow--down']].join(' ')} />
                                             <Temperature
                                                 tempClass={styles['min-max__temperature']}
-                                                temperature={Math.round(forecast.forecastday[0].day.mintemp_c)}
+                                                temperature={Math.round(minTemperature)}
                                             />
                                         </div>
                                         <Divider />
                                         <div className={styles['min-max']}>
                                             <Temperature
                                                 tempClass={styles['min-max__temperature']}
-                                                temperature={Math.round(forecast.forecastday[0].day.maxtemp_c)}
+                                                temperature={Math.round(maxTemperature)}
                                             />
                                             <Arrow className={styles['min-max__arrow']} />
                                         </div>

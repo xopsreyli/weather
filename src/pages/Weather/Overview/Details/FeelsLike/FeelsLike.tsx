@@ -2,13 +2,15 @@ import styles from './FeelsLike.module.css'
 import {useWeather} from "../../../../../contexts/Weather/Weather.ts";
 import Temperature from "../../../../../components/ui/Temperature/Temperature.tsx";
 import Arrow from "../../../../../components/icons/Arrow/Arrow.tsx";
+import {useSettings} from "../../../../../contexts/Settings/Settings.ts";
 
 const FeelsLike = () => {
     const {current} = useWeather()
+    const {isCelsius} = useSettings()
 
-    const feelslike: number = Math.round(current.feelslike_c)
-    const temp: number = Math.round(current.temp_c)
-    const windchill: number = Math.round(current.windchill_c)
+    const feelslike: number = Math.round(isCelsius ? current.feelslike_c : current.feelslike_f)
+    const temp: number = Math.round(isCelsius ? current.temp_c : current.temp_f)
+    const windchill: number = Math.round(isCelsius ? current.windchill_c : current.windchill_f)
 
     const difference: number = feelslike - temp
 

@@ -3,6 +3,7 @@ import {colors, getTemperatureColor} from "../../../../../../utils/temperatureCo
 import Temperature from "../../../../../../components/ui/Temperature/Temperature.tsx";
 import {WEEK_DAYS_ABV} from "../../../../../../enums/weekDays/weekDays.ts";
 import Indicator from "../../../../../../components/ui/Indicator/Indicator.tsx";
+import {useSettings} from "../../../../../../contexts/Settings/Settings.ts";
 
 type DayCardType = {
     epoch: number,
@@ -25,11 +26,13 @@ const DayCard = ({
                      allDaysMin,
                      allDaysMax
                  }: DayCardType) => {
+    const {isCelsius} = useSettings()
+
     const date: Date = new Date(epoch * 1000)
     const dayOfWeek: string = WEEK_DAYS_ABV[date.getDay()]
 
-    const minColor: string = getTemperatureColor(min)
-    const maxColor: string = getTemperatureColor(max)
+    const minColor: string = getTemperatureColor(min, isCelsius)
+    const maxColor: string = getTemperatureColor(max, isCelsius)
     const indicatorColors: string[] = colors.slice(colors.indexOf(minColor), colors.indexOf(maxColor) + 1)
     const indicatorWidth: number = (max - min) / (allDaysMax - allDaysMin) * 100
     const indicatorLeft: number = (min - allDaysMin) / (allDaysMax - allDaysMin) * 100

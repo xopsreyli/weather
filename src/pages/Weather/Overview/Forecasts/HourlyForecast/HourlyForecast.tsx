@@ -7,6 +7,7 @@ import Sun from "../../../../../components/icons/Sun/Sun.tsx";
 import type {ReactElement} from "react";
 import type {HourCardProps} from "./HourCard/HourCard.tsx";
 import {convertTimeTo24Format} from "../../../../../utils/time/time.ts";
+import {useSettings} from "../../../../../contexts/Settings/Settings.ts";
 
 const getValidSunTimings = (today: string, tomorrow: string, currentHours: number) => {
     const todaySunTimings = convertTimeTo24Format(today)
@@ -43,6 +44,7 @@ const insertSunCard = (suntime: string, displayValue: string, style: string, car
 
 const HourlyForecast = () => {
     const {locationInfo, forecast} = useWeather()
+    const {isCelsius} = useSettings()
 
     const date: Date = new Date()
     const hoursAtLocation: number = Number(new Intl.DateTimeFormat('en-US', {
@@ -59,10 +61,12 @@ const HourlyForecast = () => {
     const renderItems: ReactElement<HourCardProps>[] = forecastHours.map((hour, i) => {
         const hours: string = hour.time.split(' ')[1].split(':')[0]
 
+        const temperature = isCelsius ? hour.temp_c : hour.temp_f
+
         return <HourCard
             key={hour.time_epoch}
             time={hours}
-            displayValue={hour.temp_c}
+            displayValue={temperature}
             {...(i === 0 && {isNow: true})}
         >
             <img className={styles['card__icon']} src={hour.condition.icon} alt="weather icon"/>

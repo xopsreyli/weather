@@ -2,11 +2,12 @@ import styles from './Switch.module.css'
 import {type ChangeEvent, useState} from "react";
 
 type SwitchProps = {
+    id: string;
     isChecked?: boolean,
     onSwitch?: (checked: boolean) => void,
 }
 
-const Switch = ({isChecked = false, onSwitch}: SwitchProps) => {
+const Switch = ({id, isChecked = false, onSwitch}: SwitchProps) => {
     const [checked, setChecked] = useState<boolean>(isChecked)
 
     const toggle = (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,11 +23,11 @@ const Switch = ({isChecked = false, onSwitch}: SwitchProps) => {
     return (
         <label
             className={classes}
-            htmlFor="switch"
+            htmlFor={id}
         >
             <input
                 type="checkbox"
-                id="switch"
+                id={id}
                 checked={checked}
                 onChange={toggle}
             />

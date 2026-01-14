@@ -6,13 +6,16 @@ import {useWeather} from "../../contexts/Weather/Weather.ts";
 import {useNavigate} from "react-router";
 import Overview from "./Overview/Overview.tsx";
 import Divider from "../../components/ui/Divider/Divider.tsx";
+import SettingsProvider from "../../contexts/Settings/SettingsProvider.tsx";
 
 const Weather = () => {
     return (
         <WeatherProvider>
-            <div className={styles.page}>
-                <WeatherContent />
-            </div>
+            <SettingsProvider>
+                <div className={styles.page}>
+                    <WeatherContent/>
+                </div>
+            </SettingsProvider>
         </WeatherProvider>
     )
 }
@@ -37,7 +40,8 @@ const WeatherContent = () => {
                     <button
                         className={styles['error__back-btn']}
                         onClick={() => navigate(-1)}
-                    >Go back</button>
+                    >Go back
+                    </button>
                 </div>
             </div>
         )
@@ -46,7 +50,7 @@ const WeatherContent = () => {
     return (
         <div className={styles.box}>
             <Location/>
-            <Divider />
+            <Divider/>
             <Overview/>
         </div>
     );
