@@ -14,7 +14,14 @@ type MenuProps = {
 
 const Settings = ({isOpen}: MenuProps) => {
     const {theme, setTheme} = useTheme()
-    const {isCelsius, setIsCelsius} = useSettings()
+    const {
+        isCelsius,
+        setIsCelsius,
+        isKilometers,
+        setIsKilometers,
+        isPascal,
+        setIsPascal,
+    } = useSettings()
 
     const switchTheme = useCallback((isEnabled: boolean) => {
         setTheme(isEnabled ? DARK : LIGHT)
@@ -23,6 +30,14 @@ const Settings = ({isOpen}: MenuProps) => {
     const switchTemperatureUnit = useCallback((isEnabled: boolean) => {
         setIsCelsius(!isEnabled)
     }, [setIsCelsius])
+
+    const switchDistanceUnit = useCallback((isEnabled: boolean) => {
+        setIsKilometers(!isEnabled)
+    }, [setIsKilometers])
+
+    const switchPressureUnit = useCallback((isEnabled: boolean) => {
+        setIsPascal(!isEnabled)
+    }, [setIsPascal])
 
     const menuBoxClasses: string = [
         styles.menu,
@@ -40,11 +55,25 @@ const Settings = ({isOpen}: MenuProps) => {
                             onSwitch={switchTheme}
                         />
                     </Card>
-                    <Card title={'Temperature unit ( celsius / fahrenheit )'} >
+                    <Card title={'Temperature ( celsius / fahrenheit )'} >
                         <Switch
                             id={'temperature'}
                             isChecked={!isCelsius}
                             onSwitch={switchTemperatureUnit}
+                        />
+                    </Card>
+                    <Card title={'Distance ( kilometers / miles )'} >
+                        <Switch
+                            id={'distance'}
+                            isChecked={!isKilometers}
+                            onSwitch={switchDistanceUnit}
+                        />
+                    </Card>
+                    <Card title={'Pressure ( pascals / inches )'} >
+                        <Switch
+                            id={'pressure'}
+                            isChecked={!isPascal}
+                            onSwitch={switchPressureUnit}
                         />
                     </Card>
                 </div>

@@ -38,7 +38,7 @@ const DailyForecast = () => {
                         allDaysMax={allDaysMax}
                         {...(i === 0 && {
                             isToday: true,
-                            currentTemp: current.temp_c
+                            currentTemp: isCelsius ? current.temp_c : current.temp_f
                         })}
                     />
                 )

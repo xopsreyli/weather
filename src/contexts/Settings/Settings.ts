@@ -3,6 +3,10 @@ import React, {createContext, useContext} from "react";
 export type SettingsContextType = {
     isCelsius: boolean;
     setIsCelsius: React.Dispatch<React.SetStateAction<boolean>>;
+    isKilometers: boolean;
+    setIsKilometers: React.Dispatch<React.SetStateAction<boolean>>;
+    isPascal: boolean;
+    setIsPascal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const SettingsContext = createContext<SettingsContextType | null>(null)
