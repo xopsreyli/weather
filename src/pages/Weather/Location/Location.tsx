@@ -20,13 +20,14 @@ const Location = () => {
     const [isSettingsOpened, setIsSettingsOpened] = useState<boolean>(false)
     const userLocation = localStorage.getItem("userLocation") || ''
 
+
     const toggleSettings = () => {
         setIsSettingsOpened(v => !v)
     }
 
-    const currentTemperature = isCelsius ? current.temp_c : current.temp_f
-    const minTemperature = isCelsius ? forecast.forecastday[0].day.mintemp_c : forecast.forecastday[0].day.mintemp_f
-    const maxTemperature = isCelsius ? forecast.forecastday[0].day.maxtemp_c : forecast.forecastday[0].day.maxtemp_f
+    const currentTemperature = isCelsius ? current?.temp_c : current?.temp_f
+    const minTemperature = isCelsius ? forecast?.forecastday[0].day.mintemp_c : forecast?.forecastday[0].day.mintemp_f
+    const maxTemperature = isCelsius ? forecast?.forecastday[0].day.maxtemp_c : forecast?.forecastday[0].day.maxtemp_f
 
     return (
         <div className={styles.box}>
