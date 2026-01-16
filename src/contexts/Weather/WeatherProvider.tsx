@@ -9,6 +9,7 @@ type WeatherProviderProps = {
 }
 
 const WeatherProvider = ({children}: WeatherProviderProps) => {
+    const userLocation = localStorage.getItem("userLocation")
     const [location, setLocation] = useUrlSyncState(
         'location',
         '',
@@ -38,7 +39,7 @@ const WeatherProvider = ({children}: WeatherProviderProps) => {
     })
 
     useEffect(() => {
-        if (!localStorage.getItem("userLocation")) {
+        if (!userLocation) {
             window.navigator.geolocation.getCurrentPosition((position) => {
                 const currentCoords = `${position.coords.latitude},${position.coords.longitude}`
                 if (!location) {
@@ -47,7 +48,11 @@ const WeatherProvider = ({children}: WeatherProviderProps) => {
                 localStorage.setItem('userLocation', currentCoords)
             })
         }
-    }, [location, setLocation])
+
+        if (userLocation && !location) {
+            setLocation(userLocation)
+        }
+    }, [location, userLocation, setLocation])
 
     const weatherContextValue: WeatherContextType = useMemo(() => ({
         location: location,
