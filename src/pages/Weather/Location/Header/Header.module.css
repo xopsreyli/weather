@@ -19,15 +19,16 @@
 
 .menu-btn__icon path {
     stroke: rgb(from var(--theme-black) r g b / 0.8);
-    transition: 0.3s ease-out;
 }
 
 .menu-btn:hover .menu-btn__icon path {
     stroke: var(--theme-black);
+    transition: stroke 0.3s ease-out;
 }
 
 .menu-btn:hover:active .menu-btn__icon path {
     stroke: transparent;
+    transition: stroke 0.3s ease-out;
 }
 
 @media screen and (max-width: 768px) {

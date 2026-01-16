@@ -1,7 +1,6 @@
 import styles from './Location.module.css'
 import {useWeather} from "../../../contexts/Weather/Weather.ts";
 import SearchBar from "../../../components/ui/SearchBar/SearchBar.tsx";
-import {useSearchParams} from "react-router";
 import ScrollBox from "../../../components/ui/ScrollBox/ScrollBox.tsx";
 import {axes} from "../../../enums/axes/axes.ts";
 import {getTemperatureColor} from "../../../utils/temperatureColors/tempteratureColors.ts";
@@ -16,7 +15,6 @@ import {useSettings} from "../../../contexts/Settings/Settings.ts";
 const Location = () => {
     const {location, setLocation, locationInfo, current, forecast} = useWeather();
     const {isCelsius} = useSettings()
-    const [searchParams] = useSearchParams()
     const [isSettingsOpened, setIsSettingsOpened] = useState<boolean>(false)
     const userLocation = localStorage.getItem("userLocation") || ''
 
@@ -87,7 +85,7 @@ const Location = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {(userLocation && searchParams.get('location') !== userLocation) && (
+                                {(userLocation && location !== userLocation) && (
                                     <div className={styles['reset-box']}>
                                         <button
                                             className={styles.reset}

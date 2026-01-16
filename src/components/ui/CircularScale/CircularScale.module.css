@@ -22,7 +22,7 @@
 
 .indicator-box {
     width: 4px;
-    transition: 1s ease-out;
+    transition: rotate 1s ease-out;
 }
 
 .indicator {
