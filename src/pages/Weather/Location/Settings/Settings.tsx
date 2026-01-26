@@ -5,7 +5,7 @@ import Card from "./Card/Card.tsx";
 import Switch from "../../../../components/ui/Switch/Switch.tsx";
 import {useTheme} from "../../../../contexts/Theme/Theme.ts";
 import {LIGHT, DARK} from "../../../../enums/theme/theme.ts";
-import {useCallback} from "react";
+import {type ChangeEvent, useCallback} from "react";
 import {useSettings} from "../../../../contexts/Settings/Settings.ts";
 
 type MenuProps = {
@@ -23,20 +23,20 @@ const Settings = ({isOpen}: MenuProps) => {
         setIsPascal,
     } = useSettings()
 
-    const switchTheme = useCallback((isEnabled: boolean) => {
-        setTheme(isEnabled ? DARK : LIGHT)
+    const switchTheme = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setTheme(e.target.checked ? DARK : LIGHT)
     }, [setTheme])
 
-    const switchTemperatureUnit = useCallback((isEnabled: boolean) => {
-        setIsCelsius(!isEnabled)
+    const switchTemperatureUnit = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setIsCelsius(!e.target.checked)
     }, [setIsCelsius])
 
-    const switchDistanceUnit = useCallback((isEnabled: boolean) => {
-        setIsKilometers(!isEnabled)
+    const switchDistanceUnit = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setIsKilometers(!e.target.checked)
     }, [setIsKilometers])
 
-    const switchPressureUnit = useCallback((isEnabled: boolean) => {
-        setIsPascal(!isEnabled)
+    const switchPressureUnit = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setIsPascal(!e.target.checked)
     }, [setIsPascal])
 
     const menuBoxClasses: string = [
@@ -51,28 +51,28 @@ const Settings = ({isOpen}: MenuProps) => {
                     <Card title={'Theme ( light / dark )'} >
                         <Switch
                             id={'theme'}
-                            isChecked={theme === DARK}
+                            checked={theme === DARK}
                             onSwitch={switchTheme}
                         />
                     </Card>
                     <Card title={'Temperature ( celsius / fahrenheit )'} >
                         <Switch
                             id={'temperature'}
-                            isChecked={!isCelsius}
+                            checked={!isCelsius}
                             onSwitch={switchTemperatureUnit}
                         />
                     </Card>
                     <Card title={'Distance ( kilometers / miles )'} >
                         <Switch
                             id={'distance'}
-                            isChecked={!isKilometers}
+                            checked={!isKilometers}
                             onSwitch={switchDistanceUnit}
                         />
                     </Card>
                     <Card title={'Pressure ( pascals / inches )'} >
                         <Switch
                             id={'pressure'}
-                            isChecked={!isPascal}
+                            checked={!isPascal}
                             onSwitch={switchPressureUnit}
                         />
                     </Card>

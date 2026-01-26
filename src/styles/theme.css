@@ -6,6 +6,9 @@
     --theme-light-gray: light-dark(var(--light-gray), var(--metallic-black));
     --theme-echo-white: light-dark(var(--echo-white), var(--dull-black));
     --theme-silvery-white: light-dark(var(--silvery-white), var(--blackboard));
+
+    /*  cloud coverage  */
+    --cc-percentage: light-dark(var(--dull-black), var(--echo-white))
 }
 
 html[data-theme='light'] {

@@ -8,7 +8,8 @@
 
 .icon {
     height: 120px;
-    opacity: 0.75;
+    /*opacity: 0.75;*/
+    z-index: 1;
 }
 
 .icon path {
@@ -25,12 +26,12 @@
 }
 
 .percentage--back {
-    color: var(--theme-silvery-white);
-    z-index: -1;
+    color: var(--cc-percentage);
+    z-index: 0;
 }
 
 .percentage--front {
     color: transparent;
-    -webkit-text-stroke: 2px var(--theme-black);
-    z-index: 1;
+    -webkit-text-stroke: 2px var(--cc-percentage);
+    z-index: 2;
 }
